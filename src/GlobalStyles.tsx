@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
         --poppins-font: 'Poppins', sans-serif;
         --ubuntu-font: 'Ubuntu', sans-serif;
         --aurore-font: 'La Belle Aurore', cursive;
+        --roboto-font: 'Roboto', sans-serif;
 
         /*----- COLORS -----*/
         --black-color: #000;
@@ -17,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
         --primary-color: #FFD700;
         --white-antique: #FAECD9;
         --error-color: #F43B47;
+        --picto-color: #4d4d4e;
         --bg-color: #022C43;
         --font-first: #444;
     }

@@ -35,7 +35,7 @@ export const Div = styled.div`
         width: 100%;
 
         a{
-            font-size: 22px;
+            font-size: 30px;
             display: block;
             color:  #4d4d4e;
             line-height: 51px;
@@ -45,6 +45,14 @@ export const Div = styled.div`
             svg{
 
                 transition: all 0.3s ease-out;
+            }
+
+            &.active{
+
+                svg{
+
+                    color: var(--primary-color);
+                }
             }
             
             &:hover{
@@ -61,8 +69,10 @@ export const Div = styled.div`
 
             &:after{
                 content: '';
-                font-size: 8px;
+                font-size: 9px;
                 letter-spacing: 1.5px;
+                font-style: var(--ubuntu-font);
+                font-weight: 500;
                 text-transform: uppercase;
                 position: absolute;
                 bottom: 0;
@@ -88,6 +98,30 @@ export const Div = styled.div`
             &.contact-link{
                 &::after{
                     content: 'contact';
+                }
+            }
+        }
+    }
+
+    ul{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: block;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+
+        li{
+            a{
+                padding: 7px 0;
+                display: block;
+                font-size: 15px;
+                line-height: 16px;
+                color: var(--picto-color);
+
+                &:hover svg{
+                    color: var(--primary-color);
                 }
             }
         }
