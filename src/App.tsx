@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <GlobalStyles/>
+      <h1>Bienvenue test</h1>
     </>
   );
 }

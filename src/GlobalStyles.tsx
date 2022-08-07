@@ -1,18 +1,25 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+import 'animate.css'
 
 const GlobalStyles = createGlobalStyle`
+
+    @import 'animate.css'
+
     :root{
         /*----- FONTS -----*/
         --montserrat-font: 'Montserrat', sans-serif;
         --poppins-font: 'Poppins', sans-serif;
         --ubuntu-font: 'Ubuntu', sans-serif;
+        --aurore-font: 'La Belle Aurore', cursive;
 
         /*----- COLORS -----*/
         --black-color: #000;
         --white-color: #FFF;
+        --primary-color: #FFD700;
         --white-antique: #FAECD9;
         --error-color: #F43B47;
-
+        --bg-color: #022C43;
+        --font-first: #444;
     }
 
     * {
@@ -24,28 +31,28 @@ const GlobalStyles = createGlobalStyle`
         outline: none;
         border: none;
         text-decoration: none;
-        
-        &::selection{
-            background: var(--input-color);
-        }
     }
     html {
         overscroll-behavior: contain;
         height: 100%;
-        font-size: 16px;
+        font-size: 62.5%;
         @media (prefers-reduced-motion: no-preference) {
             scroll-behavior: smooth;
         }
     }
 
     body{
-        overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-family: 300 11px/1.4 var(--poppins-font);
+        color: #444;
+        background: #022c43;
+        overflow: hidden;
+        display: block;
     }
 
-    body, input{
-        font-family: var(--poppins-font);
+    textarea, input{
+        font-family: var(--ubuntu-font);
     }
 `;
 
