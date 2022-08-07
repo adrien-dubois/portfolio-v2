@@ -1,26 +1,39 @@
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom"
-import LogoA from '../../assets/img/logoA.png'
-import LogoAdrien from '../../assets/img/logoAdrien.png'
+import { NavLink, Link } from "react-router-dom";
 import { Div } from './Sidebar.elements';
-import { FaEnvelope, FaHome, FaUser } from 'react-icons/fa'
+// IMAGES
+import LogoA from '../../assets/img/logoA.png';
+import LogoAdrien from '../../assets/img/logoAdrien.png';
+// ICONS
+import { FaRegEnvelope, FaRegUser } from 'react-icons/fa';
+import { RiHome2Line } from 'react-icons/ri';
 
 const Sidebar = () => (
     <Div>
+
+        {/* LOGO */}
         <Link className="logo" to='/'>
             <img src={LogoA} alt='logo' />
             <img className="sub-logo" src={LogoAdrien} alt='adrien' />
         </Link>
+
+        {/* NAVIGATION */}
         <nav>
+
+            {/* HOME LINK */}
             <NavLink className={(navData) => navData.isActive ? "active" : "" } to="/">
-                <FaHome />
+                <RiHome2Line />
             </NavLink>
+
+            {/* ABOUT LINK */}
             <NavLink className={(navData) => navData.isActive ? "active about-link" : "about-link" } to="/about">
-                <FaUser />
+                <FaRegUser />
             </NavLink>
+
+            {/* CONTACT LINK */}
             <NavLink className={(navData) => navData.isActive ? "active contact-link" : "contact-link" } to="/contact">
-                <FaEnvelope />
+                <FaRegEnvelope />
             </NavLink>
+
         </nav>
     </Div>
 )
