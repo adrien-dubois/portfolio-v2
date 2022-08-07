@@ -4,7 +4,7 @@ import { Div } from './Sidebar.elements';
 import LogoA from '../../assets/img/logoA.png';
 import LogoAdrien from '../../assets/img/logoAdrien.png';
 // ICONS
-import { FaRegEnvelope, FaRegUser } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaTwitter } from 'react-icons/fa';
 import { RiHome2Line } from 'react-icons/ri';
 
 const Sidebar = () => (
@@ -35,6 +35,50 @@ const Sidebar = () => (
             </NavLink>
 
         </nav>
+
+        <ul>
+            <li>
+                <a
+                    target="_blank"
+                    rel="noreferrer" 
+                    href=" #"
+                >
+                    <FaLinkedin/>
+                </a>
+            </li>
+
+            <li>
+                <a
+                    target="_blank"
+                    rel="noreferrer" 
+                    href=" #"
+                >
+                    <FaGithub/>
+                </a>
+            </li>
+
+            <li>
+                <a
+                    target="_blank"
+                    rel="noreferrer" 
+                    href=" #"
+                >
+                    <FaTwitter/>
+                </a>
+            </li>
+
+            <li>
+                <a
+                    target="_blank"
+                    rel="noreferrer" 
+                    href=" #"
+                >
+                    <FaInstagram/>
+                </a>
+            </li>
+
+
+        </ul>
     </Div>
 )
   

@@ -102,4 +102,28 @@ export const Div = styled.div`
             }
         }
     }
+
+    ul{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        display: block;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+
+        li{
+            a{
+                padding: 7px 0;
+                display: block;
+                font-size: 15px;
+                line-height: 16px;
+                color: var(--picto-color);
+
+                &:hover svg{
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
 `;
