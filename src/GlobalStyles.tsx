@@ -3,10 +3,9 @@ import 'animate.css'
 
 const GlobalStyles = createGlobalStyle`
 
-    @import 'animate.css'
-
     :root{
-        /*----- FONTS -----*/
+
+        /*----- FONT -----*/
         --montserrat-font: 'Montserrat', sans-serif;
         --poppins-font: 'Poppins', sans-serif;
         --ubuntu-font: 'Ubuntu', sans-serif;
@@ -35,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
     html {
         overscroll-behavior: contain;
         height: 100%;
-        font-size: 62.5%;
+        font-size: 16px;
         @media (prefers-reduced-motion: no-preference) {
             scroll-behavior: smooth;
         }
@@ -44,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
     body{
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-family: 300 11px/1.4 var(--poppins-font);
+        font-family: var(--poppins-font);
         color: #444;
         background: #022c43;
         overflow: hidden;
