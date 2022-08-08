@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.43 152.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #008eab;
+      }
+
+      .cls-2 {
+        fill: #00707d;
+      }
+
+      .cls-3 {
+        fill: #00616a;
+      }
+    </style>
+  </defs>
+  <g id="Calque_2" data-name="Calque 2">
+    <g id="Camada_1" data-name="Camada 1">
+      <g>
+        <polygon class="cls-1" points="35.17 145.69 88.15 114.83 71.63 114.83 33.7 132.75 35.17 145.69"/>
+        <polygon class="cls-2" points="88.15 114.83 88.15 121.57 35.17 152.43 35.17 144.31 88.15 114.83"/>
+        <polygon class="cls-2" points="0 152.43 35.17 152.43 89.9 57.01 88.18 0 0 152.43"/>
+        <polygon class="cls-1" points="87.92 60.46 88.18 0 158.43 121.67 123.17 121.67 87.92 60.46"/>
+        <polygon class="cls-2" points="88.18 0 88.18 12.29 132.18 76.22 88.18 0"/>
+        <polygon class="cls-3" points="88.24 0 88.24 12.29 44.24 76.22 88.24 0"/>
+        <polygon class="cls-1" points="77.87 102.72 87.92 102.72 87.92 85.32 77.87 102.72"/>
+        <polygon class="cls-2" points="87.92 85.32 87.92 102.72 97.96 102.72 87.92 85.32"/>
+      </g>
+    </g>
+  </g>
+</svg>

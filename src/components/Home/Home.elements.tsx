@@ -114,8 +114,21 @@ export const Div = styled.div`
         animation: bounceIn 1s 1s;
         animation-fill-mode: forwards;
         min-width: 10px;
+        cursor: default;
     }
 
+    .text-animate-hover{
+        min-width: 10px;
+        display: inline-block;
+        animation-fill-mode: both;
+        cursor: default;
+
+        &:hover{
+            animation: rubberBand 1s;
+            color: var(--primary-color);
+        }
+    }
+    
     ${createCSS()};
 
 `;
