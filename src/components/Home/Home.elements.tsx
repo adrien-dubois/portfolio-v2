@@ -1,5 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import 'animate.css';
+
+function createCSS() {
+    let styles = '';
+  
+    for (let i = 1; i < 42; i += 1) {
+       styles += `
+       .text-animate._${i} {
+            animation-delay: ${i / 10}s;
+        }
+       `
+    }
+  
+    return css`${styles}`;
+  }
+
 
 export const Div = styled.div`
     width: 100%;
@@ -57,6 +72,51 @@ export const Div = styled.div`
         img{
             width: 50px;
             margin-left: 20px;
+            opacity: 0;
+            height: auto;
+            animation: rotateIn 1s linear both;
+            animation-delay: 1.4s;
         }
     }
+
+    h2{
+        color: #8d8d8d;
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 11px;
+        font-family: sans-serif;
+        letter-spacing: 3px;
+        animation: fadeIn 1s 1.8s backwards;
+    }
+
+    .flat-button{
+        color: var(--primary-color);
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        font-family: sans-serif;
+        padding: 10px 18px;
+        border: 1px solid var(--primary-color);
+        margin-top: 25px;
+        float: left;
+        animation: fadeIn 1s 1.8s backwards;
+        white-space: nowrap;
+
+        &:hover{
+            background: var(--primary-color);
+            color: #333;
+        }
+    }
+
+    .text-animate{
+        display: inline-block;
+        opacity: 0;
+        animation: bounceIn 1s 1s;
+        animation-fill-mode: forwards;
+        min-width: 10px;
+    }
+
+    ${createCSS()};
+
 `;
+
