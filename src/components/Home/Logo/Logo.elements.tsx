@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LogoContainer = styled.div`
+export const Div = styled.div`
     z-index: 0;
     width: 400px;
     height: 609px;
@@ -10,6 +10,7 @@ export const LogoContainer = styled.div`
     bottom: 0;
     left: auto;
     margin: auto;
+    opacity: 0;
 
     svg{
         width: 100%;
@@ -31,7 +32,8 @@ export const LogoContainer = styled.div`
         z-index: 1;
     }
 
-    .cls-2, .cls-1{
+    .cls-1,.cls-2{
         stroke: var(--primary-color);
+        stroke-width: 0.7px;
     }
 `;

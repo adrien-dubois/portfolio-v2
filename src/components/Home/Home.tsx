@@ -1,5 +1,4 @@
 import { Div } from "./Home.elements"
-import LogoA from '../../assets/img/logoA.png'
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
@@ -10,7 +9,7 @@ const Home = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate');
   const startArray = ['J','e',' ','s','u','i','s']
-  const nameArray = [ 'd', 'r', 'i', 'e', 'n', ',' ];
+  const nameArray = [ ' ' ,'A', 'd', 'r', 'i', 'e', 'n', ',' ];
   const jobArray = ['D','é','v','e','l','o','p','p','e','u','r',' ','W','e','b','.'];
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const Home = () => {
                   strArray={startArray}
                   idx={14}
                 />
-                <img src={LogoA} alt="developpeur"/>
                 <AnimatedLetters 
                   letterClass={letterClass}
                   strArray={nameArray}
