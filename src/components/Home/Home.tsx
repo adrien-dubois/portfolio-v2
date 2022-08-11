@@ -8,9 +8,8 @@ import Logo from "./Logo/Logo"
 const Home = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate');
-  const startArray = ['J','e',' ','s','u','i','s']
-  const nameArray = [ ' ' ,'A', 'd', 'r', 'i', 'e', 'n', ',' ];
-  const jobArray = ['D','é','v','e','l','o','p','p','e','u','r',' ','W','e','b','.'];
+  const startArray = "Je suis Adrien,".split("");
+  const jobArray = "Développeur web".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -30,11 +29,6 @@ const Home = () => {
                   letterClass={letterClass}
                   strArray={startArray}
                   idx={14}
-                />
-                <AnimatedLetters 
-                  letterClass={letterClass}
-                  strArray={nameArray}
-                  idx={21}
                 />
 
                 <br/>

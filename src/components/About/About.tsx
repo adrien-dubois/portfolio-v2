@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaCss3, FaGitAlt, FaHtml5, FaJsSquare, FaReact, FaSymfony } from "react-icons/fa";
+import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { Div, StageCube } from "./About.elements"
 
@@ -42,27 +43,28 @@ const About = () => {
             <StageCube>
                 <div className="cubespinner">
                     <div className="face1">
-                        <FaSymfony color="#FFF"/>
+                        <FaSymfony />
                     </div>
                     <div className="face2">
-                        <FaHtml5 color="#F06529"/>
+                        <FaHtml5 />
                     </div>
                     <div className="face3">
-                        <FaCss3 color="#28A4D9"/>
+                        <FaCss3 />
                     </div>
                     <div className="face4">
-                        <FaReact color="#5ED4F4"/>
+                        <FaReact />
                     </div>
                     <div className="face5">
-                        <FaJsSquare color="#EFD81D"/>
+                        <FaJsSquare />
                     </div>
                     <div className="face6">
-                        <FaGitAlt color="#EC4D28"/>
+                        <FaGitAlt />
                     </div>
                 </div>
             </StageCube>
 
         </div>
+        <Loader type="pacman" active/>
     </Div>
   )
 }

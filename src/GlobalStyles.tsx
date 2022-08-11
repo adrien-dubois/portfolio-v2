@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 import 'animate.css'
+import './index.scss'
+
+import 'loaders.css/src/animations/pacman.scss'
 
 const GlobalStyles = createGlobalStyle`
 
     :root{
-
         /*----- FONT -----*/
         --montserrat-font: 'Montserrat', sans-serif;
         --poppins-font: 'Poppins', sans-serif;
@@ -54,6 +56,25 @@ const GlobalStyles = createGlobalStyle`
 
     textarea, input{
         font-family: var(--ubuntu-font);
+    }
+
+    .loader-hidden{
+        display: none;
+    }
+
+    .loader-active{
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        color: var(--primary-color);
+        animation: fadeOut 1s 1s;
+        animation-fill-mode: forwards;
     }
 `;
 
