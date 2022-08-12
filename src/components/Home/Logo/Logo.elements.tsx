@@ -10,14 +10,8 @@ export const Div = styled.div`
     bottom: 0;
     left: auto;
     margin: auto;
-    opacity: 0;
+    opacity: 1;
 
-    svg{
-        width: 100%;
-        height: auto;
-        bottom: 0;
-        transform: rotateZ(30deg) !important;
-    }
 
     .solid-logo{
         position: absolute;
@@ -27,7 +21,7 @@ export const Div = styled.div`
         left: 0;
         margin: auto;
         width: 100%;
-        opacity: 0;
+        opacity: 1;
         transform: rotateZ(30deg);
         z-index: 1;
     }

@@ -3,14 +3,14 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import Logo from "./Logo/Logo"
+import Loader from "react-loaders"
 
 
 const Home = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate');
-  const startArray = ['J','e',' ','s','u','i','s']
-  const nameArray = [ ' ' ,'A', 'd', 'r', 'i', 'e', 'n', ',' ];
-  const jobArray = ['D','é','v','e','l','o','p','p','e','u','r',' ','W','e','b','.'];
+  const startArray = "Je suis Adrien,".split("");
+  const jobArray = "Développeur web".split("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,39 +19,37 @@ const Home = () => {
   }, [])
 
   return (
-    <Div>
-        <div className="text-zone">
-            <h1>
-                <span className={letterClass}>H</span>
-                <span className={`${letterClass} _12`}>e</span>
-                <span className={`${letterClass} _13`}>y,</span>
-                <br/>
-                <AnimatedLetters 
-                  letterClass={letterClass}
-                  strArray={startArray}
-                  idx={14}
-                />
-                <AnimatedLetters 
-                  letterClass={letterClass}
-                  strArray={nameArray}
-                  idx={21}
-                />
+    <>
+      <Div>
+          <div className="text-zone">
+              <h1>
+                  <span className={letterClass}>H</span>
+                  <span className={`${letterClass} _12`}>e</span>
+                  <span className={`${letterClass} _13`}>y,</span>
+                  <br/>
+                  <AnimatedLetters 
+                    letterClass={letterClass}
+                    strArray={startArray}
+                    idx={14}
+                  />
 
-                <br/>
-                <AnimatedLetters 
-                  letterClass={letterClass}
-                  strArray={jobArray}
-                  idx={27}
-                />
-            </h1>
-            <h2>
-                Développeur Fullstack / React JS / Symfony PHP
-            </h2>
+                  <br/>
+                  <AnimatedLetters 
+                    letterClass={letterClass}
+                    strArray={jobArray}
+                    idx={27}
+                  />
+              </h1>
+              <h2>
+                  Développeur Fullstack / React JS / Symfony PHP
+              </h2>
 
-            <Link className="flat-button" to="/contact">Contactez-moi</Link>
-        </div>
-        <Logo/>
-    </Div>
+              <Link className="flat-button" to="/contact">Contactez-moi</Link>
+          </div>
+          <Logo/>
+      </Div>
+      <Loader type="pacman" active/>
+    </>
   )
 }
 

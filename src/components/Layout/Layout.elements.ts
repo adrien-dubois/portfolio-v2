@@ -21,6 +21,7 @@ export const App = styled.div`
         left: 120px;
         font-size: 18px;
         font-family: var(--aurore-font);
+        margin-bottom: 1.5rem;
     }
 
     .bottom-tag-html{

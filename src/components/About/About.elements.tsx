@@ -1,21 +1,24 @@
 import styled, { css, keyframes } from 'styled-components'
 
+
 const spincube = keyframes`
-    from,
-    to{
+    from {
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
+    to {
+        transform: rotateX(360deg) rotateY(720deg);
+    }
     16% {
-        transform: rotateY(-90deg);
+        transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
     }
     33% {
         transform: rotateY(-90deg) rotateZ(90deg);
     }
-    50%{
+    50% {
         transform: rotateY(-180deg) rotateZ(90deg);
     }
-    66%{
-        transform: rotateY(-27deg) rotateZ(90deg);
+    66% {
+        transform: rotateY(-270deg) rotateX(90deg);
     }
     83% {
         transform: rotateX(90deg);
@@ -54,7 +57,8 @@ export const Div = styled.div`
         animation-delay: 1s;
     }
 
-    .about-page{
+    .about-page,
+    .contact-page{
         .text-zone{
             position: absolute;
             left: 10%;
@@ -178,23 +182,29 @@ export const StageCube = styled.div`
             box-shadow: 0 0 20px 0px lightyellow;
         }
 
-        .face1{
+        .face1 {
             transform: translateZ(100px);
+            color: #dd0031;
         }
-        .face2{
+        .face2 {
             transform: rotateY(90deg) translateZ(100px);
+            color: #f06529;
         }
-        .face3{
+        .face3 {
             transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+            color: #28a4d9;
         }
-        .face4{
+        .face4 {
             transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+            color: #5ed4f4;
         }
-        .face5{
+        .face5 {
             transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+            color: #efd81d;
         }
-        .face6{
+        .face6 {
             transform: rotateX(-90deg) translateZ(100px);
+            color: #ec4d28;
         }
     }
 `;
