@@ -2,35 +2,30 @@ import { FunctionComponent } from 'react'
 import { Div } from './Input.elements'
 
 type InputProps = {
+  idField:  string
   placeholder: string;
   name: string;
-  error: boolean;
   icon: JSX.Element;
   type: string;
   handleChange: (e: any) => void;
 }
 
-declare module 'react' {
-  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-    error?: any;
-  }
-}
-
 const Input: FunctionComponent<InputProps> = ({ 
     handleChange,
     icon, 
+    idField,
     type, 
     placeholder,
-    name,
-    error
+    name
 }) => {
 
   return (
-    <Div className={error ? "error" : ""}>
+    <Div>
         <div className="icon">
             {icon}
         </div>
         <input
+            id={idField}
             name={name}
             type={type}
             onChange={handleChange}

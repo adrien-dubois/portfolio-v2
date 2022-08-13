@@ -1,16 +1,118 @@
 import { useEffect, useState } from "react";
 import { FaCommentDots, FaEnvelope, FaUser } from "react-icons/fa";
-import Loader from "react-loaders"
+import Loader from "react-loaders";
 import Input from "../../utils/Input";
 import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm } from "./Contact.elements";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const [error, setError] = useState<boolean>(false);
 
-    const onChange = () => {
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [subject, setSubject] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+
+    const sendEmail = (e: any) => {
+      e.preventDefault();
+
+      let nameS = document.getElementById("name");
+      let emailS = document.getElementById("email");
+      let subjectS = document.getElementById("subject");
+      let messageS = document.getElementById("message");
+      let formMess: any = document.querySelector(".form-message");
+
+      const isEmail = () => {
+        let isMail: any = document.getElementById("not-mail");
+        let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if(email.match(regex)) {
+          isMail.style.display = "none";
+          return true;
+        } else {
+          isMail.style.display = "block";
+          isMail.style.animation ="dongle 1s";
+          setTimeout(()=> {
+            isMail.style.animation = "none";
+          }, 1000);
+          return false;
+        }
+      };
+
+      if(name && isEmail() && message) {
+          nameS?.classList.remove("red");
+          emailS?.classList.remove("red");
+          messageS?.classList.remove("red");
+          subjectS?.classList.remove("red");
+
+          formMess.innerHTML = "Message en cours d'envoi...";
+          formMess.style.background = "#115173";
+          formMess.style.opacity = "1";
+
+
+          emailjs
+            .send(
+
+              // service ID
+              `${process.env.REACT_APP_EMAIL_SERVICE}` ,
+
+              // temokate ID
+              `${process.env.REACT_APP_EMAIL_TEMPLATE}`,
+
+              {
+                name,
+                email,
+                subject,
+                message
+              },
+
+              // user ID
+              `${process.env.REACT_APP_EMAIL_ID}`
+            )
+            .then(
+              () => {
+                formMess.innerHTML = "Message envoyé! Je vous recontacterais au plus vite.";
+
+                  document.getElementById("name")?.classList.remove("error");
+                  document.getElementById("email")?.classList.remove("error");
+                  document.getElementById("message")?.classList.remove("error");
+                  document.getElementById("subject")?.classList.remove("error");
+
+                  setName("");
+                  setEmail("");
+                  setSubject("");
+                  setMessage("");
+
+                  setTimeout(() => {
+                    formMess.style.opacity = "0";
+                  }, 5000);
+              },
+              (err) => {
+                console.log(err);
+                formMess.style.background = "rgb(253, 87, 87)";
+                formMess.innerHTML = "Une erreur s'est produite, veuillez réessayer.";
+              }
+            );
+      } else {
+        formMess.innerHTML = "Merci de remplir correctement les champs.";
+        formMess.style.background = "rgb(253, 87, 87)";
+        formMess.style.opacity = "1";
+
+        if(!name){
+            nameS?.classList.add("error");
+        }
+        if (!email) {
+          emailS?.classList.add("error");
+        }
+        if (!message) {
+          messageS?.classList.add("error");
+        }
+        if(!subject) {
+          subjectS?.classList.add("error");
+        }
+      }
 
     }
 
@@ -46,20 +148,23 @@ const Contact = () => {
                         name='name' 
                         placeholder="Nom" 
                         icon={<FaUser/>}
-                        handleChange={onChange}
-                        error={error}
+                        handleChange={(e) => setName(e.target.value)}
+                        idField="name"
                       />
                     </li>
 
                     <li className="half">
-                      <Input 
-                        type='email' 
-                        name='email' 
-                        placeholder="E-Mail" 
-                        icon={<FaEnvelope/>}
-                        handleChange={onChange}
-                        error={error}
-                      />
+                      <div className="email-content">
+                        <label id="not-mail">Email non valide</label>
+                        <Input 
+                          type='email' 
+                          name='email' 
+                          placeholder="E-Mail" 
+                          icon={<FaEnvelope/>}
+                          handleChange={(e) => setEmail(e.target.value)}
+                          idField="email"
+                        />
+                      </div>
                     </li>
 
                     <li>
@@ -68,8 +173,8 @@ const Contact = () => {
                         placeholder="Sujet" 
                         name="subject"  
                         icon={<FaCommentDots/>}
-                        handleChange={onChange}
-                        error={error}
+                        handleChange={(e) => setSubject(e.target.value)}
+                        idField="subject"
                       />
                     </li>
 
@@ -77,6 +182,8 @@ const Contact = () => {
                       <textarea
                         placeholder="Message"
                         name="message"
+                        id="message"
+                        onChange={(e) => setMessage(e.target.value)}
                         required
                       >
                       </textarea>
@@ -87,7 +194,12 @@ const Contact = () => {
                         type="submit"
                         className="flat-button"
                         value="Envoyer"
+                        onClick={sendEmail}
                       />
+                    </li>
+
+                    <li>
+                      <div className="form-message"></div>
                     </li>
 
                   </ul>

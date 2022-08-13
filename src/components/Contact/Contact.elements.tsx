@@ -3,36 +3,101 @@ import styled from 'styled-components';
 export const ContactForm = styled.div`
     width: 100%;
     margin-top: 20px;
-    
-    ul{
-        padding: 0;
-        margin: 0;
+  
+    form{
 
-        li{
+        .error::placeholder{
+            color: rgb(253, 87, 87);
+        }
+        
+        ul{
             padding: 0;
             margin: 0;
-            list-style: none;
-            margin-bottom: 10px;
-            overflow: hidden;
-            /* display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; */
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 2s 2s;
-            animation-fill-mode: forwards;
-            clear: both;
-        }
-
-        li.half{
-            width: 49%;
-            margin-left: 2%;
-            float: left;
-            clear: none;
-
-            &:first-child {
-                margin-left: 0;
+    
+            li{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                margin-bottom: 10px;
+                overflow: hidden;
+                position: relative;
+                opacity: 0;
+                animation: fadeInUp 2s 2s;
+                animation-fill-mode: forwards;
+                clear: both;
+    
+                .email-content{
+                    position: relative;
+                    width: 100%;
+    
+                    #not-mail{
+                        display: none;
+                        position: absolute;
+                        top: -25px;
+                        color: var(--error-color);
+                        right: 0;
+                        transform-origin: 50% 50%;
+                    }
+    
+                    @keyframes dongle{
+                        0% {
+                            transform: translate(0px, 0px);
+                        }
+                        10% {
+                            transform: translate(-10px, 0px);
+                        }
+                        20% {
+                            transform: translate(10px, 0px);
+                        }
+                        30% {
+                            transform: translate(-10px, 0px);
+                        }
+                        40% {
+                            transform: translate(10px, 0px);
+                        }
+                        50% {
+                            transform: translate(-10px, 0px);
+                        }
+                        60% {
+                            transform: translate(10px, 0px);
+                        }
+                        70% {
+                            transform: translate(-10px, 0px);
+                        }
+                        80% {
+                            transform: translate(10px, 0px);
+                        }
+                        90% {
+                            transform: translate(-10px, 0px);
+                        }
+                        100% {
+                            transform: translate(0px, 0px);
+                        }
+                    }
+    
+                }
+    
+                .form-message{
+                    margin-top: 10px;
+                    padding: 12px;
+                    opacity: 0;
+                    background: #115173;
+                    transition: .3s ease;
+                    color: var(--primary-color);
+                    border-radius: 4px;
+                    box-shadow: 0 0 2px rgba(51, 51, 51, 0.3);
+                }
+            }
+    
+            li.half{
+                width: 49%;
+                margin-left: 2%;
+                float: left;
+                clear: none;
+                padding-top: 1rem;
+                &:first-child {
+                    margin-left: 0;
+                }
             }
         }
     }
@@ -68,6 +133,13 @@ export const ContactForm = styled.div`
         float: right;
         border-radius: 4px;
         text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+
+        &:hover{
+            background: var(--primary-color);
+            color: #333;
+        }
     }
 
 `
