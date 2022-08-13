@@ -7,6 +7,7 @@ type InputProps = {
   name: string;
   icon: JSX.Element;
   type: string;
+  value: any;
   handleChange: (e: any) => void;
 }
 
@@ -16,6 +17,7 @@ const Input: FunctionComponent<InputProps> = ({
     idField,
     type, 
     placeholder,
+    value,
     name
 }) => {
 
@@ -32,6 +34,7 @@ const Input: FunctionComponent<InputProps> = ({
             required
             autoComplete='off'
             placeholder={placeholder}
+            value={value}
         />
     </Div>
   )

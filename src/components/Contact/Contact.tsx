@@ -4,8 +4,9 @@ import Loader from "react-loaders";
 import Input from "../../utils/Input";
 import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
-import { ContactForm } from "./Contact.elements";
+import { ContactForm, InfoMap, MapWrap } from './Contact.elements';
 import emailjs from '@emailjs/browser';
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -150,6 +151,7 @@ const Contact = () => {
                         icon={<FaUser/>}
                         handleChange={(e) => setName(e.target.value)}
                         idField="name"
+                        value={name}
                       />
                     </li>
 
@@ -163,6 +165,7 @@ const Contact = () => {
                           icon={<FaEnvelope/>}
                           handleChange={(e) => setEmail(e.target.value)}
                           idField="email"
+                          value={email}
                         />
                       </div>
                     </li>
@@ -175,6 +178,7 @@ const Contact = () => {
                         icon={<FaCommentDots/>}
                         handleChange={(e) => setSubject(e.target.value)}
                         idField="subject"
+                        value={subject}
                       />
                     </li>
 
@@ -185,6 +189,7 @@ const Contact = () => {
                         id="message"
                         onChange={(e) => setMessage(e.target.value)}
                         required
+                        value={message}
                       >
                       </textarea>
                     </li>
@@ -207,6 +212,30 @@ const Contact = () => {
               </ContactForm>
 
             </div>
+
+            <InfoMap>
+                Adrien Dubois,
+                <br/>
+                France,
+                <br/>
+                164 avenue des graviers,<br/>
+                03200 Abrest<br/>
+                <span>adrien-dubois@white-umbrella.fr</span>
+            </InfoMap>
+
+            <MapWrap>
+              <MapContainer center={[46.11234, 3.43932]} zoom={13} >
+                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                  <Marker position={[46.11234, 3.43932]}>
+                    <Popup>
+                      <b>White Umbrella Dev<br/>Adrien Dubois</b><br/>
+                      J'habite ici! <br/>
+                      Venez discuter de votre projet autour d'un café!
+                    </Popup>
+                  </Marker>
+              </MapContainer>
+            </MapWrap>
+
         </div>
         <Loader type="pacman" active/>
     </Div>

@@ -9,7 +9,7 @@ export const ContactForm = styled.div`
         .error::placeholder{
             color: rgb(253, 87, 87);
         }
-        
+
         ul{
             padding: 0;
             margin: 0;
@@ -143,3 +143,43 @@ export const ContactForm = styled.div`
     }
 
 `
+
+export const InfoMap = styled.div`
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    top: 80px;
+    right: 40%;
+    z-index: 999999;
+    width: 280px;
+    padding: 20px;
+    color: #FFF;
+    font-family: var(--ubuntu-font);
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s;
+    animation-fill-mode: forwards;
+
+    span{
+        font-size: 1rem;
+        display: block;
+        padding-top: 20px;
+        color: var(--primary-color);
+    }
+`;
+
+export const MapWrap = styled.div`
+    background: rgba(8, 253 ,216, 0.1);
+    float: right;
+    width: 53%;
+    height: 100%;
+
+    .leaflet-container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        opacity: 0;
+        animation: backInRight 1s 1.2s;
+        animation-fill-mode: forwards;
+    }
+`;
