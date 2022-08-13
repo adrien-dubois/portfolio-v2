@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
+import { FaCommentDots, FaEnvelope, FaUser } from "react-icons/fa";
 import Loader from "react-loaders"
+import Input from "../../utils/Input";
 import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm } from "./Contact.elements";
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
+    const [error, setError] = useState<boolean>(false);
+
+    const onChange = () => {
+
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -34,29 +41,35 @@ const Contact = () => {
                   <ul>
 
                     <li className="half">
-                      <input 
+                      <Input 
                         type='text' 
                         name='name' 
                         placeholder="Nom" 
-                        required
+                        icon={<FaUser/>}
+                        handleChange={onChange}
+                        error={error}
                       />
                     </li>
 
                     <li className="half">
-                      <input 
+                      <Input 
                         type='email' 
                         name='email' 
                         placeholder="E-Mail" 
-                        required
+                        icon={<FaEnvelope/>}
+                        handleChange={onChange}
+                        error={error}
                       />
                     </li>
 
                     <li>
-                      <input 
+                      <Input
                         type='text' 
                         placeholder="Sujet" 
-                        name="subject" 
-                        required 
+                        name="subject"  
+                        icon={<FaCommentDots/>}
+                        handleChange={onChange}
+                        error={error}
                       />
                     </li>
 
