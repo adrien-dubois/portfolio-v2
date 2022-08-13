@@ -76,6 +76,11 @@ const GlobalStyles = createGlobalStyle`
         animation: fadeOut 1s 1s;
         animation-fill-mode: forwards;
     }
+
+    .dashboard{
+        margin-top: 200px;
+        margin-left: 200px;
+    }
 `;
 
 export default GlobalStyles;
