@@ -8,7 +8,7 @@ interface InputProps {
 }
 
 const initialState = {
-    base64: "",
+    value: "",
     name: "",
     size: "",
     file: ""
@@ -19,7 +19,7 @@ const ImageUploader: FunctionComponent<InputProps> = ({ passData }) => {
     /*----- PREPARE UPLOAD -----*/
 
     const [picData, setPicData] = useState<any>(initialState);
-    const [base6, setBase6] = useState<string>("");
+    const [base64, setBase64] = useState<string>();
 
     const onChange = (e: any) => {
         let file = e.target.files[0];
@@ -33,8 +33,7 @@ const ImageUploader: FunctionComponent<InputProps> = ({ passData }) => {
                         ...picData,
                         file: file,
                         size: file.size,
-                        name: file.name,
-                        base64: base6
+                        name: file.name
                     })
                 }
             }
@@ -44,14 +43,23 @@ const ImageUploader: FunctionComponent<InputProps> = ({ passData }) => {
     const _handleReaderLoaded= (readerEvt: any) => {
         let binaryString = readerEvt.target.result;
         const base = btoa(binaryString);
-        setBase6("data:image/png;base64," + base);
+        setBase64("data:image/png;base64," + base);
     }
 
     useEffect(() => {
-        if(!IsEmpty(picData) && !IsEmpty(base6)){
+
+        if(!IsEmpty(base64)){
+            setPicData({
+                ...picData,
+                value: base64
+            })
+        }
+
+        if(!IsEmpty(picData.value)){
             passData(picData)
         }
-    }, [base6])
+
+    }, [base64, picData.value])
 
   return (
     <Uploader>
@@ -65,6 +73,10 @@ const ImageUploader: FunctionComponent<InputProps> = ({ passData }) => {
                     image/jpeg'
             onChange={(e) => onChange(e)}
         /> 
+        <div className={ base64 ? "file-name" : "file-name hidden" }>
+            <p><b>Nom : &nbsp;</b>{picData.name} </p>
+        </div> 
+        
     </Uploader>
   )
 }

@@ -11,7 +11,7 @@ const initialState = {
   name: "",
   url: "",
   description: "",
-  image: ""
+  picture: ""
 }
 
 const Home = () => {
@@ -33,13 +33,17 @@ const Home = () => {
   const passData = ( data: any ) => {
     setFormData({
       ...formData,
-      image: data
+      picture: data
     })
   }
 
   return (
     <ProjectForm>
+
         <form>
+          <h1>
+            Upload un nouveau projet
+          </h1>
 
           <Input 
             type="text" 
@@ -76,6 +80,7 @@ const Home = () => {
           </div>
 
         </form>
+        
     </ProjectForm>
   )
 }

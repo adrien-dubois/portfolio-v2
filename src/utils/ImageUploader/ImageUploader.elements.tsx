@@ -28,4 +28,18 @@ export const Uploader = styled.div`
             cursor: pointer;
         }
     }
+
+    .file-name{
+        color: #FFF;
+        position: absolute;
+        left: 30px;
+        bottom: 0;
+        width: 800px;
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+    }
+
+    .hidden{
+        opacity: 0;
+    }
 `;
