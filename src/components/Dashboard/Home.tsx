@@ -1,42 +1,61 @@
 import { auth } from '../../firebase'
-import { FlatButton, TextArea } from '../../GlobalStyles'
+import { FlatButton, InverseBtn, TextArea } from '../../GlobalStyles'
 import Input from '../../utils/Input'
 import { ProjectForm } from './Dashboard.elements'
 import { BsFileEarmarkTextFill } from 'react-icons/bs';
-import { IoIosImages } from 'react-icons/io';
 import { BiLink } from 'react-icons/bi';
 import { useState } from 'react';
+import ImageUploader from '../../utils/ImageUploader/ImageUploader';
+
+const initialState = {
+  name: "",
+  url: "",
+  description: "",
+  image: ""
+}
 
 const Home = () => {
 
-  const [name, setName] = useState<string>("");
-  const [url, setUrl] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [image, setImage] = useState<any>("");
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const submitProject = (e: any) => {
+    e.preventDefault();
+    console.log(formData)
+  }
+
+  const passData = ( data: any ) => {
+    setFormData({
+      ...formData,
+      image: data
+    })
+  }
 
   return (
     <ProjectForm>
         <form>
 
-          
           <Input 
             type="text" 
             placeholder='Nom' 
             idField='name'
             name='name'
             icon={<BsFileEarmarkTextFill/>}
-            value={name}
-            handleChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            handleChange={handleChange}
           />
-        
 
-        
           <TextArea 
             placeholder='Description'
-            name='decription'
+            name='description'
             id='description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={handleChange}
           />
         
           <Input 
@@ -45,23 +64,15 @@ const Home = () => {
             idField='url'
             name='url'
             icon={<BiLink/>}
-            value={url}
-            handleChange={(e) => setUrl(e.target.value)} 
+            value={formData.url}
+            handleChange={handleChange} 
           />
 
-          <Input 
-            type="file" 
-            placeholder='image' 
-            idField='image'
-            name='image'
-            icon={<IoIosImages/>}
-            value={image}
-            handleChange={(e) => setImage(e.target.value)}
-          />
+          <ImageUploader passData={passData} />
         
           <div className="container-btn">
-            <FlatButton type="submit" value="Envoyer" className='btn' />
-            <button className='logout' onClick={() => auth.signOut()}>Déconnexion</button>
+            <FlatButton type="submit" value="Envoyer" className='btn' onClick={submitProject} />
+            <InverseBtn className='logout' onClick={() => auth.signOut()}>Déconnexion</InverseBtn>
           </div>
 
         </form>

@@ -127,3 +127,24 @@ export const FlatButton = styled.input`
         color: #333;
     }
 `;
+
+export const InverseBtn = styled.button`
+    color: #333;
+    background: var(--primary-color);
+    font: 11px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &:hover{
+        background: 0 0;
+        color: var(--primary-color);
+    }
+`;
