@@ -7,6 +7,7 @@ import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm, InfoMap, MapWrap } from './Contact.elements';
 import emailjs from '@emailjs/browser';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { FlatButton, TextArea } from "../../GlobalStyles";
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -183,7 +184,7 @@ const Contact = () => {
                     </li>
 
                     <li>
-                      <textarea
+                      <TextArea
                         placeholder="Message"
                         name="message"
                         id="message"
@@ -191,13 +192,12 @@ const Contact = () => {
                         required
                         value={message}
                       >
-                      </textarea>
+                      </TextArea>
                     </li>
 
                     <li>
-                      <input
+                      <FlatButton
                         type="submit"
-                        className="flat-button"
                         value="Envoyer"
                         onClick={sendEmail}
                       />
