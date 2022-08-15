@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { FaCommentDots, FaEnvelope, FaUser } from "react-icons/fa";
 import Loader from "react-loaders";
-import Input from "../../utils/Input";
 import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm, InfoMap, MapWrap } from './Contact.elements';
 import emailjs from '@emailjs/browser';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { FlatButton, TextArea } from "../../GlobalStyles";
+import Input from "../../utils/Input/Input";
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -16,6 +16,7 @@ const Contact = () => {
     const [email, setEmail] = useState<string>("");
     const [subject, setSubject] = useState<string>("");
     const [message, setMessage] = useState<string>("");
+    const [error,] = useState<boolean>(false);
 
     const sendEmail = (e: any) => {
       e.preventDefault();
@@ -145,7 +146,7 @@ const Contact = () => {
                   <ul>
 
                     <li className="half">
-                      <Input 
+                      <Input
                         type='text' 
                         name='name' 
                         placeholder="Nom" 
@@ -153,6 +154,7 @@ const Contact = () => {
                         handleChange={(e) => setName(e.target.value)}
                         idField="name"
                         value={name}
+                        error={error}
                       />
                     </li>
 
@@ -167,6 +169,7 @@ const Contact = () => {
                           handleChange={(e) => setEmail(e.target.value)}
                           idField="email"
                           value={email}
+                          error={error}
                         />
                       </div>
                     </li>
@@ -180,6 +183,7 @@ const Contact = () => {
                         handleChange={(e) => setSubject(e.target.value)}
                         idField="subject"
                         value={subject}
+                        error={error}
                       />
                     </li>
 

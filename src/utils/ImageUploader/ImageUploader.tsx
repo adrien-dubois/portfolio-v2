@@ -58,7 +58,7 @@ const ImageUploader: FunctionComponent<InputProps> = ({ passData }) => {
         if(!IsEmpty(picData.value)){
             passData(picData)
         }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [base64, picData.value])
 
   return (

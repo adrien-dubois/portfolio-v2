@@ -1,28 +1,17 @@
-import { useEffect, useState } from "react"
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useState } from 'react';
 import Home from "./Home";
 import Login from "../Login/Login";
 
 const Dashboard = () => {
 
-    const [user, setUser] = useState<any>(null);
-    const auth = getAuth();
-
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if(user) {
-                setUser(user);
-            } else {
-                setUser(null);
-            }
-        })
-    }, [])
-
-  return (
-    <div>
-        { user ? <Home/> : <Login/> }
-    </div>
-  )
+    
+  const [profile,] = useState(JSON.parse(localStorage.getItem('profile')!))
+  
+    return (
+        <div>
+            { profile ? <Home/> : <Login/> }
+        </div>
+    )
 }
 
 export default Dashboard

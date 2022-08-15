@@ -9,6 +9,7 @@ type InputProps = {
   type: string;
   value: any;
   handleChange: (e: any) => void;
+  error: boolean
 }
 
 const Input: FunctionComponent<InputProps> = ({ 
@@ -18,11 +19,12 @@ const Input: FunctionComponent<InputProps> = ({
     type, 
     placeholder,
     value,
-    name
+    name,
+    error
 }) => {
 
   return (
-    <Div>
+    <Div className={error ? "error" : ""}>
         <div className="icon">
             {icon}
         </div>

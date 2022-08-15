@@ -1,11 +1,10 @@
-import { auth } from '../../firebase'
 import { FlatButton, InverseBtn, TextArea } from '../../GlobalStyles'
-import Input from '../../utils/Input'
 import { ProjectForm } from './Dashboard.elements'
 import { BsFileEarmarkTextFill } from 'react-icons/bs';
 import { BiLink } from 'react-icons/bi';
 import { useState } from 'react';
 import ImageUploader from '../../utils/ImageUploader/ImageUploader';
+import Input from '../../utils/Input/Input';
 
 const initialState = {
   name: "",
@@ -17,6 +16,7 @@ const initialState = {
 const Home = () => {
 
   const [formData, setFormData] = useState(initialState);
+  const [error,] = useState<boolean>(false);
 
   const handleChange = (e: any) => {
     setFormData({
@@ -37,6 +37,11 @@ const Home = () => {
     })
   }
 
+  const logout = () => {
+    localStorage.clear();
+    return window.location.href="/";
+  }
+
   return (
     <ProjectForm>
 
@@ -53,6 +58,7 @@ const Home = () => {
             icon={<BsFileEarmarkTextFill/>}
             value={formData.name}
             handleChange={handleChange}
+            error={error}
           />
 
           <TextArea 
@@ -62,7 +68,7 @@ const Home = () => {
             onChange={handleChange}
           />
         
-          <Input 
+          <Input
             type="text" 
             placeholder='URL'
             idField='url'
@@ -70,13 +76,14 @@ const Home = () => {
             icon={<BiLink/>}
             value={formData.url}
             handleChange={handleChange} 
+            error={error}
           />
 
           <ImageUploader passData={passData} />
         
           <div className="container-btn">
             <FlatButton type="submit" value="Envoyer" className='btn' onClick={submitProject} />
-            <InverseBtn className='logout' onClick={() => auth.signOut()}>Déconnexion</InverseBtn>
+            <InverseBtn className='logout' onClick={logout}>Déconnexion</InverseBtn>
           </div>
 
         </form>
