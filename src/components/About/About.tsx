@@ -64,7 +64,7 @@ const About = () => {
             </StageCube>
 
         </div>
-        <Loader type="pacman" active/>
+        {/* <Loader type="pacman" active/> */}
     </Div>
   )
 }

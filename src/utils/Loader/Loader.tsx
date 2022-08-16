@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const load = keyframes`
@@ -7,7 +8,7 @@ const load = keyframes`
 const LoaderContainer = styled.div`
 
     &:before{
-        content: 'Envoi...';
+        content: 'Chargement...';
     }
 
     font-weight: bold;
@@ -25,9 +26,14 @@ const LoaderContainer = styled.div`
 `;
 
 const Loader = () => {
+
   return (
-    <LoaderContainer></LoaderContainer>
-  )
+      <>
+        <LoaderContainer/> 
+      </>
+)
+    
+  
 }
 
 export default Loader

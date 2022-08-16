@@ -48,7 +48,7 @@ const Home = () => {
           </div>
           <Logo/>
       </Div>
-      <Loader type="pacman" active/>
+      {/* <Loader type="pacman" active/> */}
     </>
   )
 }

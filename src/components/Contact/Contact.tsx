@@ -241,7 +241,7 @@ const Contact = () => {
             </MapWrap>
 
         </div>
-        <Loader type="pacman" active/>
+        {/* <Loader type="pacman" active/> */}
     </Div>
   )
 }
