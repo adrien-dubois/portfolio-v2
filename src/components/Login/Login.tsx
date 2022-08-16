@@ -37,7 +37,7 @@ const Login = () => {
     try {
       await api.signIn(formData)
       .then((response) => {
-        localStorage.setItem('profile', JSON.stringify(response))
+        localStorage.setItem('profile', JSON.stringify(response.data))
         window.location.href="/dashboard";
       })
     } catch (error: any) {

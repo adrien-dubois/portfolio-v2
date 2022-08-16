@@ -15,3 +15,6 @@ API.interceptors.request.use((req) => {
 
 // AUTH
 export const signIn = (formData: any) => API.post('/login_check',formData);
+
+// POST
+export const sendProject = (formData: any) => API.post('/v1/dashboard/', formData);

@@ -5,6 +5,7 @@ import { BiLink } from 'react-icons/bi';
 import { useState } from 'react';
 import ImageUploader from '../../utils/ImageUploader/ImageUploader';
 import Input from '../../utils/Input/Input';
+import * as api from '../../api';
 
 const initialState = {
   name: "",
@@ -25,9 +26,24 @@ const Home = () => {
     })
   }
 
-  const submitProject = (e: any) => {
+  const submitProject = async (e: any) => {
     e.preventDefault();
-    console.log(formData)
+    try {
+      await api.sendProject(formData)
+      .then(
+        () => {
+          setFormData({
+            name: "",
+            url: "",
+            description: "",
+            picture: ""
+          });
+          alert('Article posté!')
+        }
+      )
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const passData = ( data: any ) => {
@@ -44,7 +60,6 @@ const Home = () => {
 
   return (
     <ProjectForm>
-
         <form>
           <h1>
             Upload un nouveau projet
@@ -66,6 +81,7 @@ const Home = () => {
             name='description'
             id='description'
             onChange={handleChange}
+            value={formData.description}
           />
         
           <Input
