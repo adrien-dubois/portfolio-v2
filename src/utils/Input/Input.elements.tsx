@@ -11,9 +11,6 @@ export const Div = styled.div`
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
-    opacity: 0;
-    animation: fadeInUp 2s 2s;
-    animation-fill-mode: forwards;
     clear: both;
     
     &.half{
