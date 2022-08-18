@@ -1,27 +1,37 @@
-import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const load = keyframes`
-    { to{ background-size: 100% 3px; } }
+const pulse = keyframes`
+to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
 `;
 
 const LoaderContainer = styled.div`
 
-    &:before{
-        content: 'Chargement...';
-    }
 
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 30px;
-    padding-bottom: 8px;
     color: var(--primary-color);
-    background: linear-gradient(currentColor 0 0) bottom left/0% 3px no-repeat;
-    animation: ${load} 2s linear infinite;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 46px;
+    opacity: 0.8;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+  &:before {
+    content: "{";
+    display: inline-block;
+    animation: ${pulse} 0.4s alternate infinite ease-in-out;
+  }
+  &:after {
+    content: "}";
+    display: inline-block;
+    animation: ${pulse} 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+      
 
 `;
 
@@ -29,7 +39,7 @@ const Loader = () => {
 
   return (
       <>
-        <LoaderContainer/> 
+        <LoaderContainer>chargement</LoaderContainer> 
       </>
 )
     
