@@ -9,7 +9,6 @@ to {
 
 const LoaderContainer = styled.div`
 
-
     color: var(--primary-color);
     font-family: Consolas, Menlo, Monaco, monospace;
     font-weight: bold;
@@ -19,6 +18,7 @@ const LoaderContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 9999;
 
   &:before {
     content: "{";

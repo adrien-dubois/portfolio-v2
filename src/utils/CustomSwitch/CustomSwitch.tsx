@@ -17,12 +17,12 @@ const CustomSwitch: FunctionComponent<Props> = ({ children }) => {
         setPrevLoc(location.pathname);
         setProgress(true)
         if(location.pathname === prevLoc) setPrevLoc("")
-        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location])
 
     useEffect(() =>  {
         setTimeout(() => setProgress(false), 1200)
-        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [prevLoc])
 
   return (
