@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaCommentDots, FaEnvelope, FaUser } from "react-icons/fa";
-import Loader from "react-loaders";
 import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm, InfoMap, MapWrap } from './Contact.elements';
@@ -241,7 +240,6 @@ const Contact = () => {
             </MapWrap>
 
         </div>
-        {/* <Loader type="pacman" active/> */}
     </Div>
   )
 }

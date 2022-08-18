@@ -17,6 +17,7 @@ const CustomSwitch: FunctionComponent<Props> = ({ children }) => {
         setPrevLoc(location.pathname);
         setProgress(true)
         if(location.pathname === prevLoc) setPrevLoc("")
+        
     }, [location])
 
     useEffect(() =>  {

@@ -100,6 +100,12 @@ export const Div = styled.div`
                     content: 'contact';
                 }
             }
+
+            &.projects-link{
+                &::after{
+                    content: 'projets';
+                }
+            }
         }
     }
 

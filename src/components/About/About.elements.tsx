@@ -42,7 +42,6 @@ function createCSS() {
 export const Div = styled.div`
     
     .container{
-
         width: 100%;
         will-change: contents;
         height: 90%;
@@ -57,8 +56,67 @@ export const Div = styled.div`
         animation-delay: 1s;
     }
 
-    .about-page,
-    .contact-page{
+    .container.about-page,
+    .container.contact-page,
+    .container.portfolio-page{
+
+        h1{
+            font-size: 53px;
+            font-family: var(--roboto-font);
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+            left: 10px;
+
+            &::before{
+                content: '<h1>';
+                font-family: var(--aurore-font);
+                font-size: 18px;
+                position: absolute;
+                margin-top: -20px;
+                left: -10px;
+                opacity: 0.6;
+                line-height: 18px;
+            }
+
+            &::after{
+                content: '</h1>';
+                font-family: var(--aurore-font);
+                font-size: 18px;
+                position: absolute;
+                bottom: -20px;
+                margin-left: 20px;
+                left: -30px;
+                opacity: 0.6;
+                line-height: 18px;
+            }
+
+        
+        }
+
+        p{
+            font-family: sans-serif;
+            font-style: 13px;
+            color: var(--white-color);
+            font-weight: 300;
+            min-width: fit-content;
+            animation: pulse 1s;
+
+            &:nth-of-type(1){
+                animation-delay: 1.1s;
+            }
+
+            &:nth-of-type(2){
+                animation-delay: 1.2s;
+            }
+
+            &:nth-of-type(3){
+                animation-delay: 1.3s;
+            }
+        }
+
         .text-zone{
             position: absolute;
             left: 10%;
@@ -68,63 +126,8 @@ export const Div = styled.div`
             vertical-align: middle;
             display: table-cell;
             max-height: 90%;
-
-            h1{
-                font-size: 53px;
-                font-family: var(--roboto-font);
-                color: var(--primary-color);
-                font-weight: 600;
-                margin-top: 0;
-                position: relative;
-                margin-bottom: 40px;
-                left: 10px;
-
-                &::before{
-                    content: '<h1>';
-                    font-family: var(--aurore-font);
-                    font-size: 18px;
-                    position: absolute;
-                    margin-top: -20px;
-                    left: -10px;
-                    opacity: 0.6;
-                    line-height: 18px;
-                }
-
-                &::after{
-                    content: '</h1>';
-                    font-family: var(--aurore-font);
-                    font-size: 18px;
-                    position: absolute;
-                    bottom: -20px;
-                    margin-left: 20px;
-                    left: -30px;
-                    opacity: 0.6;
-                    line-height: 18px;
-                }
-            }
-
-            p{
-                font-family: sans-serif;
-                font-style: 13px;
-                color: var(--white-color);
-                font-weight: 300;
-                min-width: fit-content;
-                animation: pulse 1s;
-
-                &:nth-of-type(1){
-                    animation-delay: 1.1s;
-                }
-
-                &:nth-of-type(2){
-                    animation-delay: 1.2s;
-                }
-
-                &:nth-of-type(3){
-                    animation-delay: 1.3s;
-                }
-            }
-
         }
+
         .text-animate{
             display: inline-block;
             opacity: 0;
@@ -144,6 +147,20 @@ export const Div = styled.div`
                 animation: rubberBand 1s;
                 color: var(--white-color);
             }
+        }
+    }
+
+    .portfolio-page{
+        padding-left: 100px;
+        padding-right: 50px;
+        width: calc(100% - 150px);
+        position: initial;
+        height: 100%;
+        overflow: auto !important;
+
+        h1.page-title {
+            margin-left: 100px;
+            margin-top: 100px;
         }
     }
 

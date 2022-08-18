@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { FaCss3, FaGitAlt, FaHtml5, FaJsSquare, FaReact, FaSymfony } from "react-icons/fa";
-import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { Div, StageCube } from "./About.elements"
 
@@ -64,7 +63,6 @@ const About = () => {
             </StageCube>
 
         </div>
-        {/* <Loader type="pacman" active/> */}
     </Div>
   )
 }

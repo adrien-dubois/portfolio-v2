@@ -4,7 +4,7 @@ import { Div } from './Sidebar.elements';
 import LogoA from '../../assets/img/logoA.png';
 import LogoAdrien from '../../assets/img/logoAdrien.png';
 // ICONS
-import { FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
 import { RiHome2Line } from 'react-icons/ri';
 
 const Sidebar = () => (
@@ -27,6 +27,11 @@ const Sidebar = () => (
             {/* ABOUT LINK */}
             <NavLink className={(navData) => navData.isActive ? "active about-link" : "about-link" } to="/about">
                 <FaRegUser />
+            </NavLink>
+
+            {/* PROJECTS LINK */}
+            <NavLink className={(navData) => navData.isActive ? "active projects-link" : "projects-link" } to="/projects">
+                <FaSuitcase />
             </NavLink>
 
             {/* CONTACT LINK */}
