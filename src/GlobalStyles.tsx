@@ -50,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: var(--poppins-font);
         color: #444;
         background: #022c43;
-        overflow: hidden;
+        overflow-x: hidden;
         display: block;
     }
 

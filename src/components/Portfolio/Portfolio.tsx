@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { Div } from "../About/About.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import * as api from '../../api';
-import IsEmpty from '../../utils/IsEmpty';
+import { Div } from "./Portfolio.elements";
+import RenderPortfolio from "./RenderPortfolio";
 
 const Portfolio = () => {
 
@@ -30,33 +30,10 @@ useEffect(() => {
   }
 }, [])
 
-  const renderPortfolio = (portfolio: any) => {
-    if(!IsEmpty(portfolio)){
-
-      return(
-        <div className="images-container">
-          { 
-            
-              Object.values(portfolio).map(( port: any, idx: any) => {
-               console.log(port)
-                   return(
-                     <div className="image-box" key={idx}>
-                       <img src={`${process.env.REACT_APP_API_IMAGE}${port.image}`} alt="project"/>
-                     </div>
-                   )
-               })
-            
-          }
-        </div>
-      )
-    }
-  }
-
   return (
     <Div>
       <div className="container portfolio-page">
 
-        <div className="text-zone">
           <h1 className="page-title">
             <AnimatedLetters
               strArray={"Portfolio".split("")}
@@ -65,8 +42,10 @@ useEffect(() => {
               />
           </h1>
 
-          <div>{renderPortfolio(projects)}</div>
-        </div>
+          <div> 
+            <RenderPortfolio portfolio={projects}/> 
+          </div>
+
       </div>
     </Div>
   )

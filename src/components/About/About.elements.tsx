@@ -56,9 +56,9 @@ export const Div = styled.div`
         animation-delay: 1s;
     }
 
-    .about-page,
-    .contact-page,
-    .portfolio-page{
+    .container.about-page,
+    .container.contact-page,
+    .container.portfolio-page{
 
         h1{
             font-size: 53px;
@@ -156,7 +156,12 @@ export const Div = styled.div`
         width: calc(100% - 150px);
         position: initial;
         height: 100%;
-        overflow: auto;
+        overflow: auto !important;
+
+        h1.page-title {
+            margin-left: 100px;
+            margin-top: 100px;
+        }
     }
 
     ${createCSS()}
