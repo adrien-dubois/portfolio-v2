@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import { Div } from './Sidebar.elements';
+import { Div, Nav } from './Sidebar.elements';
 // IMAGES
 import LogoA from '../../assets/img/logoA.png';
 import LogoAdrien from '../../assets/img/logoAdrien.png';
@@ -23,25 +23,39 @@ const Sidebar = () => {
         </Link>
 
         {/* NAVIGATION */}
-        <nav className={ showNav ? 'mobile-show' : '' } >
+        <Nav 
+            className={ showNav ? 'mobile-show' : '' }  
+        >
 
             {/* HOME LINK */}
-            <NavLink className={(navData) => navData.isActive ? "active" : "" } to="/">
+            <NavLink
+                onClick={() => setShowNav(false)} 
+                className={(navData) => navData.isActive ? "active" : "" } to="/"
+            >
                 <RiHome2Line />
             </NavLink>
 
             {/* ABOUT LINK */}
-            <NavLink className={(navData) => navData.isActive ? "active about-link" : "about-link" } to="/about">
+            <NavLink
+                onClick={() => setShowNav(false)} 
+                className={(navData) => navData.isActive ? "active about-link" : "about-link" } to="/about"
+            >
                 <FaRegUser />
             </NavLink>
 
             {/* PROJECTS LINK */}
-            <NavLink className={(navData) => navData.isActive ? "active projects-link" : "projects-link" } to="/projects">
+            <NavLink
+                onClick={() => setShowNav(false)} 
+                className={(navData) => navData.isActive ? "active projects-link" : "projects-link" } to="/projects"
+            >
                 <FaSuitcase />
             </NavLink>
 
             {/* CONTACT LINK */}
-            <NavLink className={(navData) => navData.isActive ? "active contact-link" : "contact-link" } to="/contact">
+            <NavLink
+                onClick={() => setShowNav(false)} 
+                className={(navData) => navData.isActive ? "active contact-link" : "contact-link" } to="/contact"
+            >
                 <FaRegEnvelope />
             </NavLink>
 
@@ -52,7 +66,7 @@ const Sidebar = () => {
                 onClick={() => setShowNav(false)}
             />
 
-        </nav>
+        </Nav>
 
         {/* SOCIAL NETWORKS */}
         <ul>
@@ -102,7 +116,7 @@ const Sidebar = () => {
             onClick={() => setShowNav(true)}
             color='var(--primary-color)' 
             size="30px" 
-            className="hamburger-icon" 
+            className="hamburger-icon"
         />
     </Div>
     

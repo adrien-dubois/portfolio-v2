@@ -33,124 +33,7 @@ export const Div = styled.div`
         }
     }
 
-    nav{
-        display: block;
-        text-align: center;
-        position: absolute;
-        height: 210px;
-        top: 50%;
-        margin-top: -120px;
-        width: 100%;
-
-        @media screen and (max-width: 1200px) {
-            display: none;
-            height: 100%;
-            width: 100%;
-            background: #181818;
-            top: 0;
-            left: 0;
-            position: fixed;
-            z-index: 2;
-            margin: 0;
-        }
-
-        &.mobile-show {
-
-            @media screen and (max-width: 1200px) {
-                display: block;
-            }
-        }
-
-        a{
-            font-size: 30px;
-            display: block;
-            color:  #4d4d4e;
-            line-height: 51px;
-            position: relative;
-            text-decoration: none;
-
-            @media screen and (max-width: 1200px) {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            svg{
-                transition: all 0.3s ease-out;
-
-                @media screen and (max-width: 1200px) {
-                    opacity: 1 !important;
-                }
-            }
-
-            &.active{
-
-                svg{
-
-                    color: var(--primary-color);
-                }
-            }
-            
-            &:hover{
-                color: var(--primary-color);
-
-                svg{
-                    opacity: 0;
-                }
-
-                &:after{
-                    opacity: 1;
-                }
-            }
-
-            &:after{
-                content: '';
-                font-size: 9px;
-                letter-spacing: 1.5px;
-                font-style: var(--ubuntu-font);
-                font-weight: 500;
-                text-transform: uppercase;
-                position: absolute;
-                bottom: 0;
-                display: block;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                transition: all 0.3s ease-out;
-
-                @media screen and (max-width: 1200px) {
-                    opacity: 1;
-                    position: initial;
-                    width:  auto;
-                    margin-left: 10px;
-                }
-            }
-
-            &:first-child{
-                &::after{
-                    content: 'accueil';
-                }
-            }
-
-            &.about-link{
-                &::after{
-                    content: 'à propos';
-                }
-            }
-
-            &.contact-link{
-                &::after{
-                    content: 'contact';
-                }
-            }
-
-            &.projects-link{
-                &::after{
-                    content: 'projets';
-                }
-            }
-        }
-    }
+    
 
     ul{
         position: absolute;
@@ -189,7 +72,130 @@ export const Div = styled.div`
             position: absolute;
             top: 15px;
             right: 15px;
+            z-index: 1;
         }
     }
 
+`;
+
+export const Nav = styled.nav`
+    display: block;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    top: 50%;
+    margin-top: -120px;
+    width: 100%;
+
+    @media screen and (max-width: 1200px) {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        position: absolute;
+        z-index: 2;
+        margin: 0;
+        opacity: 1;
+        transition: all .5s ease;
+        background: #181818;
+    }
+
+    &.mobile-show {
+
+        @media screen and (max-width: 1200px) {
+            display: block;
+            transform: translateY(0%);
+        }
+    }
+
+    a{
+        font-size: 30px;
+        display: block;
+        color:  #4d4d4e;
+        line-height: 51px;
+        position: relative;
+        text-decoration: none;
+
+        @media screen and (max-width: 1200px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg{
+            transition: all 0.3s ease-out;
+
+            @media screen and (max-width: 1200px) {
+                opacity: 1 !important;
+            }
+        }
+
+        &.active{
+
+            svg{
+
+                color: var(--primary-color);
+            }
+        }
+        
+        &:hover{
+            color: var(--primary-color);
+
+            svg{
+                opacity: 0;
+            }
+
+            &:after{
+                opacity: 1;
+            }
+        }
+
+        &:after{
+            content: '';
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            font-style: var(--ubuntu-font);
+            font-weight: 500;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+
+            @media screen and (max-width: 1200px) {
+                opacity: 1;
+                position: initial;
+                width:  auto;
+                margin-left: 10px;
+            }
+        }
+
+        &:first-child{
+            &::after{
+                content: 'accueil';
+            }
+        }
+
+        &.about-link{
+            &::after{
+                content: 'à propos';
+            }
+        }
+
+        &.contact-link{
+            &::after{
+                content: 'contact';
+            }
+        }
+
+        &.projects-link{
+            &::after{
+                content: 'projets';
+            }
+        }
+    }
 `;

@@ -89,6 +89,10 @@ export const Div = styled.div`
             margin-bottom: 40px;
             left: 10px;
 
+            @media screen and (max-width: 1200px) {
+                font-size: 40px;
+            }
+
             &::before{
                 content: '<h1>';
                 font-family: var(--aurore-font);
@@ -123,6 +127,10 @@ export const Div = styled.div`
             min-width: fit-content;
             animation: pulse 1s;
 
+            @media screen and (max-width: 1200px) {
+                font-size: .9rem;
+            }
+
             &:nth-of-type(1){
                 animation-delay: 1.1s;
             }
@@ -145,6 +153,15 @@ export const Div = styled.div`
             vertical-align: middle;
             display: table-cell;
             max-height: 90%;
+
+            @media screen and (max-width: 1200px) {
+                position: initial;
+                transform: none;
+                width: 100%;
+                display: block;
+                padding: 20px;
+                box-sizing: border-box;
+            }
         }
 
         .text-animate{

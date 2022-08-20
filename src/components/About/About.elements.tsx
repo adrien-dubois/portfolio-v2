@@ -41,6 +41,13 @@ export const StageCube = styled.div`
     right: 0;
     overflow: hidden;
 
+    @media screen and (max-width: 1200px) {
+        position: initial;
+        width: 100%;
+        height: 0%;
+        overflow: visible;
+    }
+
     .cubespinner{
         animation-name: ${spincube};
         animation-timing-function: ease-in-out;

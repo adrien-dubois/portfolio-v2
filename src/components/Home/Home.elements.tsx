@@ -43,6 +43,14 @@ export const Div = styled.div`
         transform: translateY(-50%);
         width: 40%;
         max-height: 90%;
+
+        @media screen and (max-width: 1200px) {
+            position: initial;
+            width: 100%;
+            transform: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
     }
 
     h1{
@@ -51,6 +59,11 @@ export const Div = styled.div`
         font-weight: 500;
         font-size: 53px;
         margin: 0;
+
+        @media screen and (max-width: 1200px) {
+            color: var(--primary-color);
+            font-size: 45px;
+        }
 
         &::before{
             content: '<h1>';
@@ -119,6 +132,13 @@ export const Div = styled.div`
         &:hover{
             background: var(--primary-color);
             color: #333;
+        }
+
+        @media screen and (max-width: 1200px) {
+            float: none;
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 165px;
         }
     }
 
