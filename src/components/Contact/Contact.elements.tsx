@@ -120,6 +120,10 @@ export const InfoMap = styled.div`
     animation: fadeIn 1s 1.5s;
     animation-fill-mode: forwards;
 
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+    
     span{
         font-size: 1rem;
         display: block;
@@ -133,6 +137,13 @@ export const MapWrap = styled.div`
     float: right;
     width: 53%;
     height: 100%;
+
+    @media screen and (max-width: 1200px) {
+        float: none;
+        width: 100%;
+        height: 400px;
+        margin: 0;
+    }
 
     .leaflet-container{
         width: 100%;

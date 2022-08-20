@@ -194,9 +194,20 @@ export const Div = styled.div`
         height: 100%;
         overflow: auto !important;
 
+        @media screen and (max-width: 1200px) {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
         h1.page-title {
             margin-left: 100px;
             margin-top: 100px;
+
+            @media screen and (max-width: 1200px) {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
         }
     }
 

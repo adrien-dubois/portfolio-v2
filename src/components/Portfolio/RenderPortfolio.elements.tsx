@@ -8,6 +8,12 @@ export const Div = styled.div`
         flex-wrap: wrap;
         padding-bottom: 100px;
 
+        @media screen and (max-width: 1200px) {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
         .image-box{
             position: relative;
             flex: 1 1 20%;
@@ -16,6 +22,11 @@ export const Div = styled.div`
             border-radius: 10px;
             max-width: calc(20% - 10px);
 
+            @media screen and (max-width: 1200px) {
+                height: 300px;
+                width: 100%;
+                max-width: calc(80% - 10px);
+            }
             
             &:after{
                 content: "";
@@ -70,6 +81,10 @@ export const Div = styled.div`
                     font-size: 24px;
                     font-weight: 500;
                     line-height: 24px;
+
+                    @media screen and (max-width: 1200px) {
+                        margin-bottom: 5px;
+                    }
                 }
 
                 .description{
@@ -77,6 +92,11 @@ export const Div = styled.div`
                     margin-bottom: 5px;
                     color: #FFF;
                     font-weight: 700;
+
+                    @media screen and (max-width: 1200px) {
+                        font-weight: 600;
+                        font-size: 13px;
+                    }
                 }
 
                 .btn{
