@@ -14,7 +14,7 @@ export const Div = styled.div`
 
     @media screen and (max-width: 1200px) {
         position: relative;
-        width: 180px;
+        width: 170px;
         height: auto;
         top: 50px;
         right: 0;

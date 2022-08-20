@@ -62,7 +62,7 @@ export const Div = styled.div`
 
         @media screen and (max-width: 1200px) {
             color: var(--primary-color);
-            font-size: 45px;
+            font-size: 40px;
         }
 
         &::before{

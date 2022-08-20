@@ -104,7 +104,9 @@ export const Nav = styled.nav`
     &.mobile-show {
 
         @media screen and (max-width: 1200px) {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             transform: translateY(0%);
         }
     }

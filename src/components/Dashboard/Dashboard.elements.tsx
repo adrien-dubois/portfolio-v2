@@ -5,14 +5,29 @@ export const ProjectForm = styled.div`
     margin-left: 200px;
     position: relative;
 
+    @media screen and (max-width: 1200px) {
+        position: initial;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
     form{
         width: 80%;
+
+        @media screen and (max-width: 1200px) {
+            width: 90%;
+        }
+        
         h1{
             color: var(--primary-color);
             font-family: var(--roboto-font);
             font-weight: 500;
             font-size: 53px;
             margin: 0;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 40px;
+            }
     
             &::before{
                 content: '<h1>';
@@ -41,6 +56,10 @@ export const ProjectForm = styled.div`
         textarea{
             width: 60%;
             border-radius: 4px;
+
+            @media screen and (max-width: 1200px) {
+                width: 100%;
+            } 
         }
 
 
