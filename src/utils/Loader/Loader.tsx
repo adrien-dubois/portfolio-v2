@@ -20,14 +20,20 @@ const LoaderContainer = styled.div`
     transform: translate(-50%, -50%);
     z-index: 9999;
 
+    @media screen and (max-width: 1200px) {
+      font-size: 25px;
+    }
+
   &:before {
     content: "{";
     display: inline-block;
+    color: #FFF;
     animation: ${pulse} 0.4s alternate infinite ease-in-out;
   }
   &:after {
     content: "}";
     display: inline-block;
+    color: #FFF;
     animation: ${pulse} 0.4s 0.3s alternate infinite ease-in-out;
   }
 

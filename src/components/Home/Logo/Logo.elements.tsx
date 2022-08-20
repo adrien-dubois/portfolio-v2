@@ -12,6 +12,16 @@ export const Div = styled.div`
     margin: auto;
     opacity: 1;
 
+    @media screen and (max-width: 1200px) {
+        position: relative;
+        width: 170px;
+        height: auto;
+        top: 50px;
+        right: 0;
+        box-sizing: border-box;
+        margin: auto;
+        left: 0;
+    }
 
     .solid-logo{
         position: absolute;

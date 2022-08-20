@@ -68,9 +68,4 @@ export const Div = styled.div`
         transition: background-color 5000s ease-in-out 0s;
         -webkit-text-fill-color: white !important;
     }
-
-    @media screen and (max-width: 1400px) {
-        width: 45%;
-        margin-right: 1rem;
-    }
 `;

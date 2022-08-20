@@ -39,12 +39,20 @@ export const Div = styled.div`
         display: table-cell;
         max-height: 90%;
 
+        @media screen and (max-width: 1200px) {
+            width: 80%;
+        }
+
         h1{
             color: var(--primary-color);
             font-family: var(--roboto-font);
             font-weight: 500;
             font-size: 53px;
             margin: 0;
+
+            @media screen and (max-width: 1200px) {
+                font-size: 40px;
+            }
 
             &::before{
                 content: '<h1>';
@@ -80,6 +88,11 @@ export const Div = styled.div`
             background: #f856563e;
             border: 1px solid var(--error-color);
             border-radius: 4px;
+
+            @media screen and (max-width: 1200px) {
+                width: 90%;
+                font-size: .9rem;
+            }
         }
 
         .text-animate{

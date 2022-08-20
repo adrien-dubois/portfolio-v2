@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaCss3, FaGitAlt, FaHtml5, FaJsSquare, FaReact, FaSymfony } from "react-icons/fa";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
-import { Div, StageCube } from "./About.elements"
+import { Div } from "../Layout/Layout.elements";
+import { StageCube } from "./About.elements"
 
 
 const About = () => {
@@ -27,11 +28,11 @@ const About = () => {
                     />
                 </h1>
                 <p>
-                    Elit anim occaecat exercitation aute sit est cillum laboris sunt culpa pariatur laboris. Sint sint minim laborum enim ea commodo exercitation. Pariatur irure sint ea Lorem. Sunt ullamco ut quis aliquip. Officia ex occaecat enim cupidatat voluptate proident consequat ex velit culpa ut elit. Ut enim veniam Lorem sunt laboris sit eiusmod incididunt.
+                    Elit anim occaecat exercitation aute sit est cillum laboris sunt culpa pariatur laboris. Sint sint minim laborum enim ea commodo exercitation. Pariatur irure sint ea Lorem. 
                 </p>
                 <br/>
                 <p>
-                    Labore in voluptate enim cillum minim deserunt quis ipsum. Ea qui voluptate adipisicing labore nostrud aliquip elit ex eu reprehenderit id. Nostrud ad veniam non aliquip amet labore occaecat consectetur voluptate ex nostrud aliqua incididunt. Deserunt est laboris fugiat adipisicing id duis adipisicing cupidatat excepteur enim. Aliquip cupidatat et tempor fugiat velit consequat magna ex aliqua exercitation do mollit.
+                    Labore in voluptate enim cillum minim deserunt quis ipsum. Ea qui voluptate adipisicing labore nostrud aliquip elit ex eu reprehenderit id. Nostrud ad veniam non aliquip amet labore occaecat consectetur voluptate ex nostrud aliqua incididunt. 
                 </p>
                 <br/>
                 <p>

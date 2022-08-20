@@ -12,17 +12,6 @@ export const Div = styled.div`
     overflow: hidden;
     position: relative;
     clear: both;
-    
-    &.half{
-        width: 49%;
-        margin-left: 2%;
-        float: left;
-        clear: none;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
 
     &.error{
         border : 1px solid var(--error-color);
@@ -67,8 +56,4 @@ export const Div = styled.div`
         -webkit-text-fill-color: white !important;
     }
 
-    @media screen and (max-width: 1400px) {
-        width: 45%;
-        margin-right: 1rem;
-    }
 `;

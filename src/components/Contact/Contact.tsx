@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaCommentDots, FaEnvelope, FaUser } from "react-icons/fa";
-import { Div } from "../About/About.elements";
+import { Div } from "../Layout/Layout.elements";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { ContactForm, InfoMap, MapWrap } from './Contact.elements';
 import emailjs from '@emailjs/browser';

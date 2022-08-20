@@ -1,8 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import 'animate.css'
-import './index.scss'
-
-import 'loaders.css/src/animations/pacman.scss'
 
 const GlobalStyles = createGlobalStyle`
 
@@ -45,42 +42,30 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body{
+        margin: 0;
+        color: #444;
+        font-family: var(--poppins-font);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-family: var(--poppins-font);
-        color: #444;
         background: #022c43;
         overflow-x: hidden;
         display: block;
+
+        
+        @media screen and (max-width: 1200px){
+            overflow: visible;
+        }
     }
 
     textarea, input{
         font-family: var(--ubuntu-font);
     }
 
-    .loader-hidden{
-        display: none;
-    }
-
-    .loader-active{
-        display: block;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        width: 50px;
-        height: 50px;
-        color: var(--primary-color);
-        animation: fadeOut 1s 1s;
-        animation-fill-mode: forwards;
-    }
-
     .dashboard{
         margin-top: 200px;
         margin-left: 200px;
     }
+
 
 `;
 
