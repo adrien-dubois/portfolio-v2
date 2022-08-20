@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { FaCss3, FaGitAlt, FaHtml5, FaJsSquare, FaReact, FaSymfony } from "react-icons/fa";
+import ParticlesComponent from "../../utils/ParticlesComponent";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { Div } from "../Layout/Layout.elements";
-import { StageCube } from "./About.elements"
-
+import { StageCube } from "./About.elements";
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate');
+    const { t } = useTranslation();
 
     useEffect(() => {
         setTimeout(() => {
@@ -19,6 +21,9 @@ const About = () => {
   return (
     <Div>
         <div className="container about-page">
+        <div className="particles">
+                <ParticlesComponent/>
+        </div>
             <div className="text-zone">
                 <h1>
                     <AnimatedLetters
@@ -28,7 +33,7 @@ const About = () => {
                     />
                 </h1>
                 <p>
-                    Elit anim occaecat exercitation aute sit est cillum laboris sunt culpa pariatur laboris. Sint sint minim laborum enim ea commodo exercitation. Pariatur irure sint ea Lorem. 
+                    {t('Title')}
                 </p>
                 <br/>
                 <p>
@@ -39,7 +44,7 @@ const About = () => {
                     Lorem tempor culpa reprehenderit eu adipisicing elit. Esse do exercitation nisi labore commodo. Cillum velit amet in cupidatat nostrud id sit quis et deserunt sunt. Quis cupidatat mollit cillum veniam dolore qui sint.
                 </p>
             </div>
-
+           
             <StageCube>
                 <div className="cubespinner">
                     <div className="face1">
