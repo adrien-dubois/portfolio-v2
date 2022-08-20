@@ -9,6 +9,14 @@ export const Div = styled.div`
     z-index: 3;
     min-height: 500px;
 
+    
+    @media screen and (max-width: 1200px) {
+        background: transparent;
+        position: initial;
+        height: auto;
+        min-height: auto;
+    }
+
     .logo{
         display: block;
         padding: 8px 0;
@@ -34,6 +42,25 @@ export const Div = styled.div`
         margin-top: -120px;
         width: 100%;
 
+        @media screen and (max-width: 1200px) {
+            display: none;
+            height: 100%;
+            width: 100%;
+            background: #181818;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 2;
+            margin: 0;
+        }
+
+        &.mobile-show {
+
+            @media screen and (max-width: 1200px) {
+                display: block;
+            }
+        }
+
         a{
             font-size: 30px;
             display: block;
@@ -42,9 +69,18 @@ export const Div = styled.div`
             position: relative;
             text-decoration: none;
 
-            svg{
+            @media screen and (max-width: 1200px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
+            svg{
                 transition: all 0.3s ease-out;
+
+                @media screen and (max-width: 1200px) {
+                    opacity: 1 !important;
+                }
             }
 
             &.active{
@@ -81,6 +117,13 @@ export const Div = styled.div`
                 text-align: center;
                 opacity: 0;
                 transition: all 0.3s ease-out;
+
+                @media screen and (max-width: 1200px) {
+                    opacity: 1;
+                    position: initial;
+                    width:  auto;
+                    margin-left: 10px;
+                }
             }
 
             &:first-child{
@@ -118,6 +161,10 @@ export const Div = styled.div`
         text-align: center;
         margin: 0;
 
+        @media screen and (max-width: 1200px) {
+            display: none;
+        }
+
         li{
             a{
                 padding: 7px 0;
@@ -132,4 +179,17 @@ export const Div = styled.div`
             }
         }
     }
+
+    .hamburger-icon,
+    .close-icon{
+        display: none;
+
+        @media screen and (max-width: 1200px) {
+            display: block;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    }
+
 `;

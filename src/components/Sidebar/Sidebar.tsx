@@ -4,11 +4,17 @@ import { Div } from './Sidebar.elements';
 import LogoA from '../../assets/img/logoA.png';
 import LogoAdrien from '../../assets/img/logoAdrien.png';
 // ICONS
-import { FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
+import { FaBars, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
+import { MdClose } from 'react-icons/md';
 import { RiHome2Line } from 'react-icons/ri';
+import { useState } from "react";
 
-const Sidebar = () => (
-    <Div>
+const Sidebar = () => {
+
+    const [showNav, setShowNav] = useState<boolean>(false);
+
+   return ( 
+   <Div>
 
         {/* LOGO */}
         <Link className="logo" to='/'>
@@ -17,7 +23,7 @@ const Sidebar = () => (
         </Link>
 
         {/* NAVIGATION */}
-        <nav>
+        <nav className={ showNav ? 'mobile-show' : '' } >
 
             {/* HOME LINK */}
             <NavLink className={(navData) => navData.isActive ? "active" : "" } to="/">
@@ -39,8 +45,16 @@ const Sidebar = () => (
                 <FaRegEnvelope />
             </NavLink>
 
+            <MdClose
+                color='var(--primary-color)' 
+                size="30px" 
+                className="close-icon"
+                onClick={() => setShowNav(false)}
+            />
+
         </nav>
 
+        {/* SOCIAL NETWORKS */}
         <ul>
             <li>
                 <a
@@ -84,8 +98,16 @@ const Sidebar = () => (
 
 
         </ul>
+        <FaBars 
+            onClick={() => setShowNav(true)}
+            color='var(--primary-color)' 
+            size="30px" 
+            className="hamburger-icon" 
+        />
     </Div>
-)
+    
+    )
+}
   
 
 
