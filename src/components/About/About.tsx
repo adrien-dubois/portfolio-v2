@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaCss3, FaGitAlt, FaHtml5, FaJsSquare, FaReact, FaSymfony } from "react-icons/fa";
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
-import { Div, StageCube } from "./About.elements"
+import { Div } from "../Layout/Layout.elements";
+import { StageCube } from "./About.elements"
 
 
 const About = () => {

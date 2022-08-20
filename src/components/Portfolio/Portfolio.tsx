@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import * as api from '../../api';
-import { Div } from "./Portfolio.elements";
+import { Div } from "../Layout/Layout.elements";
 import RenderPortfolio from "./RenderPortfolio";
 
 const Portfolio = () => {
