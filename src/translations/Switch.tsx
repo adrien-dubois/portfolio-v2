@@ -7,6 +7,11 @@ const Label = styled.label`
     width: 60px;
     height: 28px;
 
+    @media screen and (max-width: 1200px) {
+        height: 24px;
+        width: 55px;
+    }
+
     input{
         opacity: 0;
         width: 0;
@@ -34,6 +39,10 @@ const Label = styled.label`
         transition: 0.4s;
         border-radius: 28px;
 
+        @media screen and (max-width: 1200px) {
+            border-radius: 24px;
+        }
+
         &:before{
             position: absolute;
             content: '';
@@ -44,6 +53,11 @@ const Label = styled.label`
             background-color: #fff;
             transition: 0.4s;
             border-radius: 50%;
+
+            @media screen and (max-width: 1200px) {
+                height: 18px;
+                width: 18px;
+            }
         }
     }
 `;

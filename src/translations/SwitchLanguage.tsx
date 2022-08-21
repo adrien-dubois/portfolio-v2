@@ -53,13 +53,30 @@ const FlagContainer = styled.div`
     animation: fadeIn 1s 1.5s;
     animation-fill-mode: forwards;
 
+    @media screen and (max-width: 1200px) {
+        width: 50%;
+        margin: 0 auto;
+        left: 0;
+        bottom: 0;  
+        top: initial;
+        margin-bottom: 10px;
+    }
+
     label{
         margin: 0 5px;
         margin-top: 16px;
+
+        @media screen and (max-width: 1200px) {
+            margin-top: 10px;
+        }
     }
 
     img{
         width: 40px;
+
+        @media screen and (max-width: 1200px) {
+            width: 30px;
+        }
     }
 `
 
