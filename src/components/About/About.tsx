@@ -17,6 +17,9 @@ const About = () => {
         }, 3000)
     }, [])
 
+    const getTranslate = (value: string) => {
+        return JSON.stringify(`${t(value)}`).replace(/\"/g, "").split("")
+    }
 
   return (
     <Div>
@@ -27,7 +30,7 @@ const About = () => {
             <div className="text-zone">
                 <h1>
                     <AnimatedLetters
-                        strArray={"À propos de moi".split("")}
+                        strArray={getTranslate('Title')}
                         idx={15}
                         letterClass={letterClass}
                     />
