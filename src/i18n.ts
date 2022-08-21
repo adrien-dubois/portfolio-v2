@@ -25,7 +25,6 @@ i18n
   .init({
     resources,
     lng:"fr", //default language
-    keySeparator: false,
     interpolation: {
       escapeValue: false,
     },

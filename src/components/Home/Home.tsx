@@ -3,13 +3,14 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import Logo from "./Logo/Logo"
+import GetArrayTranslate from '../../utils/GetArrayTranslate';
+import { useTranslation } from "react-i18next"
 
 
 const Home = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate');
-  const startArray = "Je suis Adrien,".split("");
-  const jobArray = "Développeur web".split("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,22 +29,22 @@ const Home = () => {
                   <br/>
                   <AnimatedLetters 
                     letterClass={letterClass}
-                    strArray={startArray}
+                    strArray={GetArrayTranslate('Homepage.StartTitle')}
                     idx={14}
                   />
 
                   <br/>
                   <AnimatedLetters 
                     letterClass={letterClass}
-                    strArray={jobArray}
+                    strArray={GetArrayTranslate('Homepage.JobTitle')}
                     idx={27}
                   />
               </h1>
               <h2>
-                  Développeur Fullstack / React JS / Symfony PHP
+                  {t('Homepage.Subtitle')}
               </h2>
 
-              <Link className="flat-button" to="/contact">Contactez-moi</Link>
+              <Link className="flat-button" to="/contact">{t('Homepage.Button')}</Link>
           </div>
           <Logo/>
       </Div>

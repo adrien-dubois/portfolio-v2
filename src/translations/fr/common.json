@@ -1,3 +1,12 @@
 {
-    "Title": "À propos de moi"
+    "About": { 
+        "Title": "À propos de moi"   
+    },
+    "Homepage": {
+        "StartTitle": "Je suis Adrien,",
+        "JobTitle": "Développeur web",
+        "Subtitle": "Développeur Fullstack / React JS / Symfony PHP",
+        "Button": "Contactez-moi"
+    },
+    "Loader": "chargement"
 }

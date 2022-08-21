@@ -5,6 +5,7 @@ import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import { Div } from "../Layout/Layout.elements";
 import { StageCube } from "./About.elements";
 import { useTranslation } from 'react-i18next';
+import GetArrayTranslate from "../../utils/GetArrayTranslate";
 
 const About = () => {
 
@@ -17,10 +18,6 @@ const About = () => {
         }, 3000)
     }, [])
 
-    const getTranslate = (value: string) => {
-        return JSON.stringify(`${t(value)}`).replace(/\"/g, "").split("")
-    }
-
   return (
     <Div>
         <div className="container about-page">
@@ -30,13 +27,13 @@ const About = () => {
             <div className="text-zone">
                 <h1>
                     <AnimatedLetters
-                        strArray={getTranslate('Title')}
+                        strArray={GetArrayTranslate('About.Title')}
                         idx={15}
                         letterClass={letterClass}
                     />
                 </h1>
                 <p>
-                    {t('Title')}
+                    {t('About.Title')}
                 </p>
                 <br/>
                 <p>

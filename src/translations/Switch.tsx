@@ -5,7 +5,7 @@ const Label = styled.label`
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 34px;
+    height: 28px;
 
     input{
         opacity: 0;
@@ -19,7 +19,7 @@ const Label = styled.label`
     }
 
     input:checked + .slider{
-        background-color: #2196f3;
+        background-color: #115173;
     }
 
 
@@ -32,15 +32,15 @@ const Label = styled.label`
         bottom: 0;
         background-color: #ccc;
         transition: 0.4s;
-        border-radius: 34px;
+        border-radius: 28px;
 
         &:before{
             position: absolute;
             content: '';
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
+            height: 22px;
+            width: 22px;
+            left: 5px;
+            bottom: 3px;
             background-color: #fff;
             transition: 0.4s;
             border-radius: 50%;
@@ -48,10 +48,15 @@ const Label = styled.label`
     }
 `;
 
-const Switch = () => {
+interface Props {
+    isToggled: boolean;
+    onToggle: () => void;
+}
+
+const Switch = ({ isToggled, onToggle }: Props) => {
   return (
     <Label>
-        <input type="checkbox" />
+        <input type="checkbox" checked={isToggled} onChange={onToggle} />
         <span className="slider"/>
     </Label>
   )

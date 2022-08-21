@@ -1,7 +1,6 @@
 interface Props {
   image: any;
   isSelected: boolean;
-  onClick: () => void;
 }
 
 const Flag = ({ image, isSelected, ...props }: Props) =>{ 

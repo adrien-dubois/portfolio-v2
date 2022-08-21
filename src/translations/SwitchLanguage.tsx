@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { FrFlag, UkFlag } from '../assets/flags';
@@ -8,12 +9,20 @@ import Switch from './Switch';
 const SwitchLanguage = () => {
 
     const { i18n } = useTranslation();
+    const [isToggle, setIsToggle] = useState<boolean>(false);
 
-    const handleChangeLanguage = (language: any) => {
-        i18n.changeLanguage(language);
-    }
+
+    useEffect(() => {
+        if(isToggle === true){
+            i18n.changeLanguage('en');
+        }
+        if(isToggle === false) {
+            i18n.changeLanguage('fr');
+        }
+    }, [isToggle]);
 
     const selectedLanguage = i18n.language;
+
 
   return (
 
@@ -21,13 +30,11 @@ const SwitchLanguage = () => {
         <Flag
             image={FrFlag}
             isSelected={ selectedLanguage === 'fr' }
-            onClick = {() => handleChangeLanguage('fr')}
         />
-        <Switch/>
+        <Switch isToggled={isToggle} onToggle={() => setIsToggle(!isToggle)} />
         <Flag
             image={UkFlag}
             isSelected={ selectedLanguage === 'en' }
-            onClick = {() => handleChangeLanguage('en')}
         />
     </FlagContainer>
 
@@ -36,23 +43,23 @@ const SwitchLanguage = () => {
 
 const FlagContainer = styled.div`
     position: absolute;
-    top: 0;
+    top: -1%;
     right: 0;
-    width: 250px;
+    width: 230px;
     display: flex;
     justify-content: space-evenly;
     z-index: 5;
+    opacity: 0;
+    animation: fadeIn 1s 1.5s;
+    animation-fill-mode: forwards;
 
     label{
-        /* position: absolute;
-        bottom: 0; */
         margin: 0 5px;
-        margin-top: 20px;
+        margin-top: 16px;
     }
 
     img{
-        width: 50px;
-        cursor: pointer;
+        width: 40px;
     }
 `
 
