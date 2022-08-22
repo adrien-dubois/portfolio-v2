@@ -8,5 +8,15 @@
         "Subtitle": "Développeur Fullstack / React JS / Symfony PHP",
         "Button": "Contactez-moi"
     },
-    "Loader": "chargement"
+    "Loader": "chargement",
+    "Sidebar": {
+        "Home": "Accueil",
+        "About": "À propos",
+        "Skills": "Skills",
+        "Work": "Projets",
+        "Contact": "Contact"
+    },
+    "Skills": {
+        "Title": "Mes skills"
+    }
 }

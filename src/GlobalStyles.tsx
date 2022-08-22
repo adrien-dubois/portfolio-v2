@@ -1,7 +1,18 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import 'animate.css'
+// @ts-ignore
+import CoolveticaWoff from './assets/fonts/CoolveticaRg-Regular.woff'
+// @ts-ignore
+import CoolveticaWoff2 from './assets/fonts/CoolveticaRg-Regular.woff2'
 
 const GlobalStyles = createGlobalStyle`
+
+
+    @font-face{
+        font-family: 'Coolvetica';
+        src: url(${CoolveticaWoff}) format('woff'),
+             url(${CoolveticaWoff2}) format('woff2');
+    }
 
     :root{
         /*----- FONT -----*/
@@ -10,9 +21,10 @@ const GlobalStyles = createGlobalStyle`
         --ubuntu-font: 'Ubuntu', sans-serif;
         --aurore-font: 'La Belle Aurore', cursive;
         --roboto-font: 'Roboto', sans-serif;
+        --coolvetica: 'Coolvetica', sans-serif;
 
         /*----- COLORS -----*/
-        --black-color: #000;
+        --black-color: #1d1818;
         --white-color: #FFF;
         --primary-color: #FFD700;
         --white-antique: #FAECD9;

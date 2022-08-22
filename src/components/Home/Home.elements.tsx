@@ -55,10 +55,11 @@ export const Div = styled.div`
 
     h1{
         color: #FFF;
-        font-family: var(--roboto-font);
-        font-weight: 500;
-        font-size: 53px;
+        font-family: var(--coolvetica);
+        font-size: 65px;
+        line-height: 63px;
         margin: 0;
+        font-weight: 400;
 
         @media screen and (max-width: 1200px) {
             color: var(--primary-color);

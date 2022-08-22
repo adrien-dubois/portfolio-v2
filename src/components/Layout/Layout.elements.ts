@@ -77,13 +77,15 @@ export const Div = styled.div`
 
     .about-page,
     .contact-page,
-    .portfolio-page{
+    .portfolio-page,
+    .skill-page{
 
         h1{
-            font-size: 53px;
-            font-family: var(--roboto-font);
             color: var(--primary-color);
-            font-weight: 600;
+            font-family: var(--coolvetica);
+            font-size: 65px;
+            line-height: 63px;
+            font-weight: 400;
             margin-top: 0;
             position: relative;
             margin-bottom: 40px;
