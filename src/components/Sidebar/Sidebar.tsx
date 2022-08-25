@@ -7,7 +7,7 @@ import LogoAdrien from '../../assets/img/logoAdrien.png';
 import { FaBars, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { RiHome2Line } from 'react-icons/ri';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiGearHammer } from 'react-icons/gi';
 import { useTranslation } from "react-i18next";
 
@@ -15,6 +15,15 @@ const Sidebar = () => {
 
     const [showNav, setShowNav] = useState<boolean>(false);
     const { t } = useTranslation();
+
+    useEffect(() => {
+        if(showNav === true) {
+            document.body.style.overflow = 'hidden';
+        }
+        if(showNav === false){
+            document.body.style.overflow = 'unset';
+        }
+    }, [showNav])
 
    return ( 
    <Div>
@@ -27,7 +36,7 @@ const Sidebar = () => {
 
         {/* NAVIGATION */}
         <Nav 
-            className={ showNav ? 'mobile-show' : '' }  
+            className={ showNav ? 'mobile-show' : '' } 
         >
 
             {/* HOME LINK */}

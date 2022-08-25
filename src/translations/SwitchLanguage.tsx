@@ -58,9 +58,9 @@ const FlagContainer = styled.div`
         width: 50%;
         margin: 0 auto;
         left: 0;
-        bottom: 0;  
-        top: initial;
+        top: 0; 
         margin-bottom: 10px;
+        z-index: 1;
     }
 
     label{

@@ -44,7 +44,8 @@ export const StageCube = styled.div`
     @media screen and (max-width: 1200px) {
         position: initial;
         width: 100%;
-        height: 0%;
+        height: 100%;
+        min-height: 400px;
         overflow: visible;
     }
 

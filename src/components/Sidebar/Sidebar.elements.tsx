@@ -99,6 +99,7 @@ export const Nav = styled.nav`
         opacity: 1;
         transition: all .5s ease;
         background: #181818;
+        overflow: hidden;
     }
 
     &.mobile-show {
