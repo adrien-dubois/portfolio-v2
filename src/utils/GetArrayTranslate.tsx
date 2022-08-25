@@ -6,7 +6,7 @@ const GetArrayTranslate = (value: val) => {
 
     const { t } = useTranslation();
 
-    return JSON.stringify(`${t(value)}`).replace(/\"/g, "").split("")
+    return JSON.stringify(`${t(value)}`).replace(/"/g, "").split("")
 }
 
 export default GetArrayTranslate

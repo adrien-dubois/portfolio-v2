@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
         --picto-color: #4d4d4e;
         --bg-color: #022C43;
         --font-first: #444;
+        --input-color: #115173;
     }
 
     * {
@@ -78,7 +79,22 @@ const GlobalStyles = createGlobalStyle`
         margin-left: 200px;
     }
 
+    .logoContain{        
+        
+       
+    }
+    #logoS{
+        width: 600px;
+        height: auto;
+        position: absolute;
+        top: 0;
+        right: 15%;
+        bottom: 0;
+        left: auto;
+        margin: auto;
 
+    }
+    
 `;
 
 export default GlobalStyles;

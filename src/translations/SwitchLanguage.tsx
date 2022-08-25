@@ -19,6 +19,7 @@ const SwitchLanguage = () => {
         if(isToggle === false) {
             i18n.changeLanguage('fr');
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isToggle]);
 
     const selectedLanguage = i18n.language;
