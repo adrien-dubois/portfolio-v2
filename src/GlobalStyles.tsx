@@ -61,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background: #022c43;
-        overflow-x: hidden;
+        overflow: hidden;
         display: block;
 
         
@@ -111,6 +111,7 @@ export const TextArea = styled.textarea`
     padding: 20px;
     min-height: 150px;
     box-sizing: border-box;
+    border-radius: 4px;
 
     &::placeholder{
         font-family: var(--poppins-font);

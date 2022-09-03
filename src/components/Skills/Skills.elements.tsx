@@ -1,60 +1,52 @@
 import styled from 'styled-components';
 
 export const CloudContainer = styled.div`
-    position: absolute;
-    top: 0;
-    right: 50%;
-    width: 500px;
-    height: 500px;
+   float: right;
+   width: 53%;
+   height: 100%;
+
+   .tagcloud{
+    color: var(--primary-color);
+    font-family: var(--ubuntu-font);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10% auto;
+   }
+
+   .tagcloud--item:hover{
+    color: #175173;
+   }
 `;
 
-export const SkillsBars = styled.section`
-    display: flex;
-    padding-left: 0 20rem;
-    margin-left: 4rem;
-    gap: 10rem;
+export const Skillz = styled.section`
+    padding: 0 0 50px 0;
+    position: relative;
 
-    .skillz{
-        transform: rotate(-90deg);
-        width: max-content;
-        height: max-content;
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
+    .container{
+        position: relative;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        .row{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 20px;
 
-        &__bars{
-            display: flex;
-            flex-direction: row-reverse;
-            gap: 1rem;
+            .col{
+                grid-column: span 12;
 
-            &__container{
-                display: flex;
-                flex-direction: column;
-                gap: 2.5rem;
+                .skill-bx{
+                    text-align: center;
 
-                span{
-                    text-transform: uppercase;
-                    letter-spacing: 0.2rem;
-                    color: var(--primary-color);
-                }
-                progress{
-                    width: 30rem;
-                    --webkit-appearance: none;
-                    appearance: none;
+                    .skill-slider{
+                        margin: 0 auto;
+                        position: relative;
 
-                    &::-webkit-progress-bar{
-                        height: 3rem;
-                        background-color: var(--input-color);
-                    }
-                    &::-webkit-progress-value{
-                        background-color: var(--primary-color);
+                        &__item{
+                            margin: 0 auto; 
+                        }
                     }
                 }
-            }
-            h3{
-                transform: rotate(90deg);
-                color: #FFF;
-                font-size: 1.5rem;
             }
         }
     }

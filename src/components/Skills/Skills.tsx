@@ -3,10 +3,13 @@ import { useTranslation } from 'react-i18next';
 import GetArrayTranslate from '../../utils/GetArrayTranslate';
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters';
 import { Div } from '../Layout/Layout.elements';
-import { CloudContainer, SkillsBars } from './Skills.elements';
-//@ts-ignore
-import TagsCanvas from 'react-tags-canvas'
-import { dataSkills, skillsBars } from './DataSkills';
+import { CloudContainer, Skillz } from './Skills.elements';
+import { responsive, skillsCircle } from './DataSkills';
+import WordCloud from './WordCloud';
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
+import { SkillCircle } from './SkillCircle';
+
 
 const Skills = () => {
 
@@ -33,54 +36,46 @@ const Skills = () => {
                 <p>
                     Elit enim esse exercitation duis eiusmod quis pariatur ipsum proident occaecat. Commodo cupidatat labore fugiat magna do voluptate id labore qui. Aliqua commodo enim laborum ex enim minim ex cillum fugiat.
                 </p>
-                <p>
-                    Dolor cupidatat tempor proident nostrud culpa ut deserunt excepteur labore ut. Eu dolore adipisicing et laborum labore ut eu in adipisicing nostrud mollit voluptate aliquip. Voluptate excepteur fugiat tempor esse duis.
-                </p>
 
-                <SkillsBars>
-                    <div className="skillz">
-                        {
-                            skillsBars.map(({name,amount}) => {
-                                return(
-                                   <div className="skillz__bars" key={name}>
-                                        <div className="skillz__bars__container">
-                                            <progress value={amount} max="100" />
-                                            <span>{name}</span>
-                                        </div>
-                                        <h3>{amount}%</h3>
-                                   </div> 
-                                )
-                            })
-                        }
+                <Skillz id="skills">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <div className="skill-bx">
+                                    <Carousel
+                                        responsive={responsive}
+                                        infinite={true}
+                                        className="skill-slider"
+                                    >
+                                        { skillsCircle.map(({name, amount}) => {
+                                            return (
+
+                                                <div className="skill-slider__item">
+
+                                                    <SkillCircle 
+                                                        name={name} 
+                                                        number={amount} 
+                                                    />
+
+                                                </div>
+
+                                            )
+                                        })}
+
+                                    </Carousel>
+                                </div>
+                            </div>
+                            <div className="col-12">
+                                
+                            </div>
+                        </div>
                     </div>
-                </SkillsBars>
+                </Skillz>
 
             </div>
 
             <CloudContainer>
-                <TagsCanvas
-                    width={window.innerWidth}
-                    height={window.innerHeight}
-                    dragControl
-                    dragThreshold={4}
-                    pulsateTime={3}
-                    pulsateTo={1.0}
-                    textColour='#FFD700'
-                    maxSpeed={0.02}
-                    shuffleTags
-                    shape='sphere'
-                    zoom={0.8}
-                    noSelect
-                    textFont={null}
-                    pinchZoom
-                    freezeDecel
-                    initial= {[0.3, -0.1]}
-                    depth={1.1}
-                    repeatTags={2}
-                    fadeIn = {1000}
-                    outlineThickness={0.5}
-                    tags={dataSkills}
-                />
+                <WordCloud />
             </CloudContainer>    
 
         </div>

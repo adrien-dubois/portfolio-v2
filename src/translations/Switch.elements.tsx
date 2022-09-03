@@ -34,11 +34,17 @@ const on = keyframes`
 
 export const Wrapper = styled.div`
     position: absolute;
-    top: 2%;
+    top: 0.6%;
     right: 2%;
     width: 130px;
     height: 50px;
     z-index: 5;
+
+    @media screen and (max-width: 1200px) {
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
 
     .switch{
         position: relative;
@@ -65,8 +71,8 @@ export const Wrapper = styled.div`
 
         &:after{
             content: '';
-            width: 32px;
-            height: 35px;
+            width: 38.5px !important;
+            height: 37px;
             border-radius: 50%;
             background-color: #FFF;
             position: absolute;
@@ -81,7 +87,7 @@ export const Wrapper = styled.div`
     .switch:checked:after{
         animation: ${on} .7s forwards cubic-bezier(.8, .5, .2, 1.4);
         box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
-        left: 0;
+        left: 5px;
     }
 
 `;

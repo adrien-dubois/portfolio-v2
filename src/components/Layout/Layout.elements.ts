@@ -75,6 +75,10 @@ export const Div = styled.div`
         }
     }
 
+    .skill-page{
+        overflow-y: hidden;
+    }
+
     .about-page,
     .contact-page,
     .portfolio-page,

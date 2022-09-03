@@ -11,6 +11,7 @@ export const Div = styled.div`
     margin-bottom: 10px;
     overflow: hidden;
     position: relative;
+    border-radius: 4px;
     clear: both;
 
     &.error{
