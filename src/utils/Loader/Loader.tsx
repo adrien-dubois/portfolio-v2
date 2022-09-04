@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const pulse = keyframes`
 to {
@@ -42,10 +43,10 @@ const LoaderContainer = styled.div`
 `;
 
 const Loader = () => {
-
+  const { t } = useTranslation();
   return (
       <>
-        <LoaderContainer>chargement</LoaderContainer> 
+        <LoaderContainer>{t('Loader')}</LoaderContainer> 
       </>
 )
     

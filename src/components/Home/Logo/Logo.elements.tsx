@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const Div = styled.div`
+
     z-index: 0;
     width: 400px;
     height: 609px;
     position: absolute;
-    top: 0;
+    top: 6px;
     right: 15%;
     bottom: 0;
     left: auto;
     margin: auto;
-    opacity: 1;
+    opacity: 0;
 
     @media screen and (max-width: 1200px) {
         position: relative;
@@ -23,6 +24,15 @@ export const Div = styled.div`
         left: 0;
     }
 
+    svg{
+        width: 96%;
+        height: auto;
+        bottom: 0;
+        right: 15%;
+        left: auto;
+        transform: rotateZ(30deg) !important;
+    }
+
     .solid-logo{
         position: absolute;
         top: 0;
@@ -31,13 +41,14 @@ export const Div = styled.div`
         left: 0;
         margin: auto;
         width: 100%;
-        opacity: 1;
+        opacity: 0;
         transform: rotateZ(30deg);
         z-index: 1;
     }
 
     .cls-1,.cls-2{
         stroke: var(--primary-color);
-        stroke-width: 0.7px;
+        stroke-width: 0.9px;
     }
 `;
+       

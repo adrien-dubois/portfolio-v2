@@ -99,6 +99,7 @@ export const Nav = styled.nav`
         opacity: 1;
         transition: all .5s ease;
         background: #181818;
+        overflow: hidden;
     }
 
     &.mobile-show {
@@ -178,25 +179,31 @@ export const Nav = styled.nav`
 
         &:first-child{
             &::after{
-                content: 'accueil';
+                content: attr(data-text);
             }
         }
 
         &.about-link{
             &::after{
-                content: 'à propos';
+                content: attr(data-text);
             }
         }
 
         &.contact-link{
             &::after{
-                content: 'contact';
+                content: attr(data-text);
+            }
+        }
+
+        &.skills-link{
+            &::after{
+                content: attr(data-text);
             }
         }
 
         &.projects-link{
             &::after{
-                content: 'projets';
+                content: attr(data-text);
             }
         }
     }

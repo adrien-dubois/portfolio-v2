@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./components/Home/Home";
 import Layout from "./components/Layout/Layout";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Skills from "./components/Skills/Skills";
 import GlobalStyles from "./GlobalStyles";
 import CustomSwitch from "./utils/CustomSwitch/CustomSwitch";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="contact" element={<Contact/>}/>
           <Route path="projects" element={<Portfolio/>}/>
           <Route path="dashboard" element={<Dashboard/>}/>
+          <Route path="skills" element={<Skills/>}/>
         </Route>
       </CustomSwitch>
     </>

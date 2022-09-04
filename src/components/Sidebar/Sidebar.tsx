@@ -7,11 +7,23 @@ import LogoAdrien from '../../assets/img/logoAdrien.png';
 import { FaBars, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { RiHome2Line } from 'react-icons/ri';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { GiGearHammer } from 'react-icons/gi';
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
 
     const [showNav, setShowNav] = useState<boolean>(false);
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        if(showNav === true) {
+            document.body.style.overflow = 'hidden';
+        }
+        if(showNav === false){
+            document.body.style.overflow = 'unset';
+        }
+    }, [showNav])
 
    return ( 
    <Div>
@@ -24,13 +36,14 @@ const Sidebar = () => {
 
         {/* NAVIGATION */}
         <Nav 
-            className={ showNav ? 'mobile-show' : '' }  
+            className={ showNav ? 'mobile-show' : '' } 
         >
 
             {/* HOME LINK */}
             <NavLink
                 onClick={() => setShowNav(false)} 
                 className={(navData) => navData.isActive ? "active" : "" } to="/"
+                data-text={t('Sidebar.Home')}
             >
                 <RiHome2Line />
             </NavLink>
@@ -39,14 +52,26 @@ const Sidebar = () => {
             <NavLink
                 onClick={() => setShowNav(false)} 
                 className={(navData) => navData.isActive ? "active about-link" : "about-link" } to="/about"
+                data-text={t('Sidebar.About')}
             >
                 <FaRegUser />
+            </NavLink>
+
+
+            {/* SKILLS LINK */}
+            <NavLink
+                onClick={() => setShowNav(false)} 
+                className={(navData) => navData.isActive ? "active skills-link" : "skills-link" } to="/skills"
+                data-text={t('Sidebar.Skills')}
+            >
+                <GiGearHammer />
             </NavLink>
 
             {/* PROJECTS LINK */}
             <NavLink
                 onClick={() => setShowNav(false)} 
                 className={(navData) => navData.isActive ? "active projects-link" : "projects-link" } to="/projects"
+                data-text={t('Sidebar.Work')}
             >
                 <FaSuitcase />
             </NavLink>
@@ -55,6 +80,7 @@ const Sidebar = () => {
             <NavLink
                 onClick={() => setShowNav(false)} 
                 className={(navData) => navData.isActive ? "active contact-link" : "contact-link" } to="/contact"
+                data-text={t('Sidebar.Contact')}
             >
                 <FaRegEnvelope />
             </NavLink>
