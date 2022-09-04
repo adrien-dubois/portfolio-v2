@@ -5,7 +5,6 @@ import AnimatedLetters from "../AnimatedLetters/AnimatedLetters"
 import Logo from "./Logo/Logo"
 import GetArrayTranslate from '../../utils/GetArrayTranslate';
 import { useTranslation } from "react-i18next"
-import { SvgComponent } from '../../utils/SvgLogo';
 
 
 const Home = () => {
@@ -48,7 +47,6 @@ const Home = () => {
               <Link className="flat-button" to="/contact">{t('Homepage.Button')}</Link>
           </div>
           <Logo/>
-          {/* <SvgComponent/> */}
 
       </Div>
     </>

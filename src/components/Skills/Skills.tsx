@@ -4,10 +4,8 @@ import GetArrayTranslate from '../../utils/GetArrayTranslate';
 import AnimatedLetters from '../AnimatedLetters/AnimatedLetters';
 import { Div } from '../Layout/Layout.elements';
 import { CloudContainer, Skillz } from './Skills.elements';
-import { responsive, skillsCircle } from './DataSkills';
+import { skillsCircle } from './DataSkills';
 import WordCloud from './WordCloud';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
 import { SkillCircle } from './SkillCircle';
 
 
@@ -38,38 +36,21 @@ const Skills = () => {
                 </p>
 
                 <Skillz id="skills">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col">
-                                <div className="skill-bx">
-                                    <Carousel
-                                        responsive={responsive}
-                                        infinite={true}
-                                        className="skill-slider"
-                                    >
-                                        { skillsCircle.map(({name, amount}) => {
-                                            return (
+                     { skillsCircle.map(({name, amount}) => {
+                        return (
 
-                                                <div className="skill-slider__item">
+                            <div className="skill-item">
 
-                                                    <SkillCircle 
-                                                        name={name} 
-                                                        number={amount} 
-                                                    />
+                                <SkillCircle 
+                                    name={name} 
+                                    number={amount}
+                                />
 
-                                                </div>
-
-                                            )
-                                        })}
-
-                                    </Carousel>
-                                </div>
                             </div>
-                            <div className="col-12">
-                                
-                            </div>
-                        </div>
-                    </div>
+
+                        )
+                    })}
+
                 </Skillz>
 
             </div>

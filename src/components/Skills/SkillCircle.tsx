@@ -25,13 +25,12 @@ export const SkillCircle = ({ number, name }: Props) => (
 
 const Box = styled.div<{percent: number}>`
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 275px;
+    height: 275px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-right: 3.5rem;
 
     .percent{
         position: relative;
@@ -78,10 +77,10 @@ const Box = styled.div<{percent: number}>`
             color: var(--primary-color);
 
             h2{
-                font-size: 34px;
+                font-size: 24px;
 
                 span{
-                    font-size: 24px;
+                    font-size: 14px;
                 }
             }
         }
@@ -92,5 +91,7 @@ const Box = styled.div<{percent: number}>`
         color: var(--primary-color);
         font-weight: 700;
         letter-spacing: 1px;
+        font-size: 20px;
+        font-style: italic;
     }
 `;

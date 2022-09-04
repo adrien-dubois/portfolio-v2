@@ -45,15 +45,19 @@ export const texts = [
 export const skillsCircle = [
     {
         name: "React JS",
-        amount: 85
+        amount: 90
     },
     {
         name: "Symfony & PHP",
-        amount: 85
+        amount: 90
     },
     {
         name: "API Rest",
         amount: 80
+    },
+    {
+        name: "TypeScript",
+        amount: 85
     },
     {
         name: "Web Design",
