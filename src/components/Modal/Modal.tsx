@@ -1,12 +1,20 @@
 import { MouseEvent, useCallback, useEffect, useRef } from "react"
 import { Background, CloseModalContent, ModalContent, ModalWrapper } from './Modal.elements';
 
-interface ModalProps {
-    showModal: boolean,
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+interface Project {
+    name: string,
+    description: string,
+    url: string,
+    image: string
 }
 
-const Modal = ({ showModal, setShowModal }: ModalProps) => {
+interface ModalProps {
+    showModal: boolean,
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>,
+    projectDatas: Project
+}
+
+const Modal = ({ showModal, setShowModal, projectDatas }: ModalProps) => {
 
     const modalRef = useRef<any>();
 
@@ -41,7 +49,7 @@ const Modal = ({ showModal, setShowModal }: ModalProps) => {
                             aria-label="Close Modal"
                             onClick={() => setShowModal((prev: any) => !prev)}
                         />
-                        
+
                     </ModalWrapper>
                 </div>
             </Background>

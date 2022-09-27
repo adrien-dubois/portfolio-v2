@@ -54,6 +54,8 @@ export const App = styled.div`
 `;
 
 export const Div = styled.div`
+    width: 100vw;
+    height: 100vh;
     .container{
         width: 100%;
         will-change: contents;

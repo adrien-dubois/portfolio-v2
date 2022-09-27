@@ -1,0 +1,23 @@
+<svg id="Alphabet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 678.78 721.31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gold;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #092c43;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="216.74 719.8 458.45 269.2 378.3 189.05 136.64 639.02 216.74 719.8"/>
+    <polygon class="cls-1" points="1.2 640.03 81.38 720.56 216.74 720.56 136.64 639.59 1.2 640.03"/>
+    <polygon class="cls-1" points="462.07 640.03 542.28 720.56 677.58 720.56 597.54 639.59 462.07 640.03"/>
+    <polygon class="cls-1" points="233 459.71 312.99 538.92 509.27 538.92 428.81 459.3 233 459.71"/>
+    <polygon class="cls-1" points="479.5 1.49 559.65 81.64 677.58 719.8 597.54 639.02 479.5 1.49"/>
+    <path class="cls-2" d="M639.87,839,606.55,660.64h-196L314.38,839H179L521.84,201.42H657.25L775.28,839ZM556.05,389,479.39,532.8H582.84Z" transform="translate(-177.75 -199.93)"/>
+  </g>
+</svg>
