@@ -70,6 +70,10 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    :focus{
+        outline: none;
+    }
+
     textarea, input{
         font-family: var(--ubuntu-font);
     }
@@ -112,6 +116,8 @@ export const TextArea = styled.textarea`
     min-height: 150px;
     box-sizing: border-box;
     border-radius: 4px;
+    clear: both;
+    margin-bottom: -5px;
 
     &::placeholder{
         font-family: var(--poppins-font);
@@ -119,6 +125,7 @@ export const TextArea = styled.textarea`
         opacity: 0.6;
         color: var(--primary-color);
     }
+
 `;
 
 export const FlatButton = styled.input`

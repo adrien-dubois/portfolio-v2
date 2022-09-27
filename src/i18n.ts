@@ -18,13 +18,16 @@ const resources = {
   },
 };
 
+const locale = window.navigator.language;
+const defaultLanguage = locale === 'fr-FR' ? "fr-FR" : "en-EN";
+
 //i18N Initialization
 
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng:"fr", //default language
+    lng:defaultLanguage, //default language
     interpolation: {
       escapeValue: false,
     },

@@ -1,27 +1,28 @@
-import { FunctionComponent } from 'react'
 import { Div } from './Input.elements'
 
-type InputProps = {
-  idField:  string
+interface IProps  {
+  idField:  string;
   placeholder: string;
   name: string;
   icon: JSX.Element;
   type: string;
   value: any;
+  classname?: string;
   handleChange: (e: any) => void;
-  error: boolean
+  error: boolean;
 }
 
-const Input: FunctionComponent<InputProps> = ({ 
+const Input = ({ 
     handleChange,
     icon, 
     idField,
     type, 
     placeholder,
+    classname,
     value,
     name,
     error
-}) => {
+} : IProps) => {
 
   return (
     <Div className={error ? "error" : ""}>
@@ -32,12 +33,14 @@ const Input: FunctionComponent<InputProps> = ({
             id={idField}
             name={name}
             type={type}
+            className={classname}
             onChange={handleChange}
             required
             autoComplete='off'
             placeholder={placeholder}
             value={value}
         />
+        <span className="border"></span>
     </Div>
   )
 }

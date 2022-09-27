@@ -87,6 +87,29 @@ export const ContactForm = styled.div`
                     border-radius: 4px;
                     box-shadow: 0 0 2px rgba(51, 51, 51, 0.3);
                 }
+
+                input[type="text"], textarea{
+                    width: 100%;
+                }
+                
+                .field{
+                    border: 0;
+                    border-bottom: 1px solid transparent;
+                }
+
+                .field ~ .border{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--primary-color);
+                }
+
+                .field:focus ~ .border{
+                    width: 100%;
+                    transition: all 0.4s;
+                }
             }
     
             li.half{

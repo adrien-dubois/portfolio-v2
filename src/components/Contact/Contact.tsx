@@ -148,6 +148,7 @@ const Contact = () => {
                       <Input
                         type='text' 
                         name='name' 
+                        classname="field"
                         placeholder="Nom" 
                         icon={<FaUser/>}
                         handleChange={(e) => setName(e.target.value)}
@@ -163,6 +164,7 @@ const Contact = () => {
                         <Input 
                           type='email' 
                           name='email' 
+                          classname="field"
                           placeholder="E-Mail" 
                           icon={<FaEnvelope/>}
                           handleChange={(e) => setEmail(e.target.value)}
@@ -178,6 +180,7 @@ const Contact = () => {
                         type='text' 
                         placeholder="Sujet" 
                         name="subject"  
+                        classname="field"
                         icon={<FaCommentDots/>}
                         handleChange={(e) => setSubject(e.target.value)}
                         idField="subject"
@@ -189,6 +192,7 @@ const Contact = () => {
                     <li>
                       <TextArea
                         placeholder="Message"
+                        className="field"
                         name="message"
                         id="message"
                         onChange={(e) => setMessage(e.target.value)}
@@ -196,6 +200,7 @@ const Contact = () => {
                         value={message}
                       >
                       </TextArea>
+                      <span className="border"></span>
                     </li>
 
                     <li>
