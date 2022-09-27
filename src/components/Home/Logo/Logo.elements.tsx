@@ -25,10 +25,10 @@ export const Div = styled.div`
     }
 
     svg{
-        width: 96%;
+        width: 100%;
         height: auto;
         bottom: 0;
-        right: 15%;
+        right: 0%;
         left: auto;
         transform: rotateZ(30deg) !important;
     }
@@ -46,9 +46,9 @@ export const Div = styled.div`
         z-index: 1;
     }
 
-    .cls-1,.cls-2{
+    .cls-1{
         stroke: var(--primary-color);
-        stroke-width: 0.9px;
+        stroke-width: 3px;
     }
 `;
        

@@ -1,23 +1,39 @@
-<svg id="Alphabet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 678.78 721.31">
+<svg id="Alphabet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 676.38 719.07">
   <defs>
     <style>
       .cls-1 {
         fill: gold;
-        stroke: #000;
-        stroke-miterlimit: 10;
       }
 
       .cls-2 {
-        fill: #092c43;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: #288eab;
       }
     </style>
+    <linearGradient id="linear-gradient" y1="678.58" x2="215.54" y2="678.58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d15b30"/>
+      <stop offset="1" stop-color="#de902f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="460.87" y1="678.58" x2="676.38" y2="678.58" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="231.8" y1="497.62" x2="508.07" y2="497.62" xlink:href="#linear-gradient"/>
   </defs>
   <g>
-    <polygon class="cls-1" points="216.74 719.8 458.45 269.2 378.3 189.05 136.64 639.02 216.74 719.8"/>
-    <polygon class="cls-1" points="1.2 640.03 81.38 720.56 216.74 720.56 136.64 639.59 1.2 640.03"/>
-    <polygon class="cls-1" points="462.07 640.03 542.28 720.56 677.58 720.56 597.54 639.59 462.07 640.03"/>
-    <polygon class="cls-1" points="233 459.71 312.99 538.92 509.27 538.92 428.81 459.3 233 459.71"/>
-    <polygon class="cls-1" points="479.5 1.49 559.65 81.64 677.58 719.8 597.54 639.02 479.5 1.49"/>
-    <path class="cls-2" d="M639.87,839,606.55,660.64h-196L314.38,839H179L521.84,201.42H657.25L775.28,839ZM556.05,389,479.39,532.8H582.84Z" transform="translate(-177.75 -199.93)"/>
+    <polygon class="cls-1" points="215.54 718.31 457.26 267.71 377.1 187.56 135.44 637.52 215.54 718.31"/>
+    <polygon class="cls-2" points="0 638.54 80.18 719.07 215.54 719.07 135.44 638.1 0 638.54"/>
+    <polygon class="cls-3" points="460.88 638.54 541.08 719.07 676.38 719.07 596.34 638.1 460.88 638.54"/>
+    <polygon class="cls-4" points="231.8 458.22 311.79 537.43 508.07 537.43 427.61 457.81 231.8 458.22"/>
+    <polygon class="cls-1" points="478.3 0 558.45 80.15 676.38 718.31 596.34 637.52 478.3 0"/>
+    <path class="cls-5" d="M639.87,839,606.55,660.64h-196L314.38,839H179L521.84,201.42H657.25L775.28,839ZM556.05,389,479.39,532.8H582.84Z" transform="translate(-178.95 -201.42)"/>
   </g>
 </svg>
