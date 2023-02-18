@@ -57,6 +57,7 @@ export const Div = styled.div`
     width: 100vw;
     height: 100vh;
     .container{
+        overflow-x: hidden;
         width: 100%;
         will-change: contents;
         height: 90%;

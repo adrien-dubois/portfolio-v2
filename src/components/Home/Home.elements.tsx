@@ -20,7 +20,7 @@ export const Div = styled.div`
     width: 100%;
     will-change: contents;
     height: 90%;
-    min-height: 566px;
+    min-height: 90vh;
     position: absolute;
     opacity: 0;
     top: 5%;

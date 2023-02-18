@@ -1,15 +1,14 @@
 import { NavLink, Link } from "react-router-dom";
-import { Div, Nav } from './Sidebar.elements';
-// IMAGES
-import LogoA from '../../assets/img/logoA.png';
-import LogoAdrien from '../../assets/img/logoAdrien.png';
+import { Div, Icons, Line, LogoTop, Nav } from './Sidebar.elements';
 // ICONS
-import { FaBars, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope, FaRegUser, FaSuitcase, FaTwitter } from 'react-icons/fa';
+import { Github, Instagram, Linkedin, Twitter } from "../../assets/SVGComponents";
 import { MdClose } from 'react-icons/md';
 import { RiHome2Line } from 'react-icons/ri';
 import { useEffect, useState } from "react";
 import { GiGearHammer } from 'react-icons/gi';
 import { useTranslation } from "react-i18next";
+import { FaBars, FaRegEnvelope, FaRegUser, FaSuitcase } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Sidebar = () => {
 
@@ -30,8 +29,9 @@ const Sidebar = () => {
 
         {/* LOGO */}
         <Link className="logo" to='/'>
-            <img src={LogoA} alt='logo' />
-            <img className="sub-logo" src={LogoAdrien} alt='adrien' />
+            <LogoTop>
+                AD
+            </LogoTop>
         </Link>
 
         {/* NAVIGATION */}
@@ -95,49 +95,54 @@ const Sidebar = () => {
         </Nav>
 
         {/* SOCIAL NETWORKS */}
-        <ul>
-            <li>
-                <a
-                    target="_blank"
-                    rel="noreferrer" 
-                    href=" #"
-                >
-                    <FaLinkedin/>
-                </a>
-            </li>
 
-            <li>
-                <a
-                    target="_blank"
-                    rel="noreferrer" 
-                    href=" #"
-                >
-                    <FaGithub/>
-                </a>
-            </li>
+        <Icons
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
+            <motion.div
+                animate={{scale:[0,1,1.5,1]}}
+                transition={{type:'spring', duration:1, delay:1}}
+            >
+                <NavLink target="_blank" to={{pathname:"https://github.com/adrien-dubois"}}>
+                    <Github width={25} height={25} fill={'#4d4d4e'} />
+                </NavLink>
+            </motion.div>
+            <motion.div
+                animate={{scale:[0,1,1.5,1]}}
+                transition={{type:'spring', duration:1, delay:1.2}}
+            >
+                <NavLink target="_blank" to={{pathname:"https://twitter.com/AdrienDuboisDev"}}>
+                    <Twitter width={25} height={25} fill={'#4d4d4e'} />
+                </NavLink>
+            </motion.div>
+            <motion.div
+                animate={{scale:[0,1,1.5,1]}}
+                transition={{type:'spring', duration:1, delay:1.4}}
+            >
+                <NavLink target="_blank" to={{pathname:"https://www.linkedin.com/in/adrien-dubois-03/"}}>
+                    <Linkedin width={25} height={25} fill={'#4d4d4e'} />
+                </NavLink>
+            </motion.div>
+            <motion.div
+                animate={{scale:[0,1,1.5,1]}}
+                transition={{type:'spring', duration:1, delay:1.6}}
+            >
+                <NavLink target="_blank" to={{pathname:"https://www.instagram.com/ad_dubois/"}}>
+                    <Instagram width={25} height={25} fill={'#4d4d4e'} />
+                </NavLink>
+            </motion.div>
 
-            <li>
-                <a
-                    target="_blank"
-                    rel="noreferrer" 
-                    href=" #"
-                >
-                    <FaTwitter/>
-                </a>
-            </li>
+            <Line 
+                color="#4d4d4e"
+                initial={{height: 0}}
+                animate={{height: '8rem'}}
+                transition={{type:'spring', duration:1, delay:0.8}}
+            />
 
-            <li>
-                <a
-                    target="_blank"
-                    rel="noreferrer" 
-                    href=" #"
-                >
-                    <FaInstagram/>
-                </a>
-            </li>
-
-
-        </ul>
+        </Icons>
+        
         <FaBars 
             onClick={() => setShowNav(true)}
             color='var(--primary-color)' 

@@ -3,16 +3,15 @@ import SwitchLanguage from '../../translations/SwitchLanguage';
 import Sidebar from '../Sidebar/Sidebar';
 import { App } from './Layout.elements';
 
-
 const Layout = () => {
   return  (
       <App>
         <Sidebar/>
-        <SwitchLanguage/>
+        {/* <SwitchLanguage/> */}
         <div className="page">
           <span className="tags top-tags">&lt;body&gt;</span>
 
-          <Outlet/>
+            <Outlet/>
 
           <span className="tags bottom-tags">
             &lt;/body&gt;

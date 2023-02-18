@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { FunctionComponent } from 'react';
+import { useEffect, useState } from 'react'
 import { Routes, useLocation } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
-interface Props {
-    children: any
+interface IProps {
+    children: JSX.Element | JSX.Element[] ;
 }
 
-const CustomSwitch: FunctionComponent<Props> = ({ children }) => {
+
+const CustomSwitch= ({ children } : IProps ) => {
 
     const [progress, setProgress] = useState<boolean>(false);
     const [prevLoc, setPrevLoc] = useState<any>("");
@@ -28,7 +28,9 @@ const CustomSwitch: FunctionComponent<Props> = ({ children }) => {
   return (
     <>
         {progress && <Loader/>}
-        <Routes>{children}</Routes>
+        <Routes location={location} key={location.pathname}>
+            {children}
+        </Routes>
     </>
   )
 }

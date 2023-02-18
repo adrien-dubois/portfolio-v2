@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
         --aurore-font: 'La Belle Aurore', cursive;
         --roboto-font: 'Roboto', sans-serif;
         --coolvetica: 'Coolvetica', sans-serif;
+        --pacifico: "Pacifico", cursive;
 
         /*----- COLORS -----*/
         --black-color: #1d1818;
@@ -70,9 +71,6 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
-    :focus{
-        outline: none;
-    }
 
     textarea, input{
         font-family: var(--ubuntu-font);
@@ -83,10 +81,6 @@ const GlobalStyles = createGlobalStyle`
         margin-left: 200px;
     }
 
-    .logoContain{        
-        
-       
-    }
     #logoS{
         width: 600px;
         height: auto;

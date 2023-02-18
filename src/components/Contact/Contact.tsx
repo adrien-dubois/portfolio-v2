@@ -141,6 +141,7 @@ const Contact = () => {
               </p>
 
               <ContactForm>
+                <span className="tags form-tags top"> &lt;form&gt;</span>
                 <form>
                   <ul>
 
@@ -217,6 +218,7 @@ const Contact = () => {
 
                   </ul>
                 </form>
+                <span className="tags form-tags bottom"> &lt;/form&gt;</span>
               </ContactForm>
 
             </div>

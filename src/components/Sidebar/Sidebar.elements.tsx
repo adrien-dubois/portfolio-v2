@@ -1,4 +1,13 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
+export const LogoTop = styled.h1`
+    display: inline-block;
+    color: var(--primary-color);
+    font-family: var(--pacifico);
+    font-size: 1.5rem;
+    margin: 0 auto;
+`;
 
 export const Div = styled.div`
     background: #181818;
@@ -8,7 +17,11 @@ export const Div = styled.div`
     top: 0;
     z-index: 3;
     min-height: 500px;
-
+    
+    .logo{
+        display: flex;
+        margin-top: 1.2rem;
+    }
     
     @media screen and (max-width: 1200px) {
         background: transparent;
@@ -16,24 +29,6 @@ export const Div = styled.div`
         height: auto;
         min-height: auto;
     }
-
-    .logo{
-        display: block;
-        padding: 8px 0;
-
-        img{
-            display: block;
-            margin: 8px auto;
-            width: 50px;
-            height: auto;
-
-            &.sub-logo{
-                width: 60px;
-            }
-        }
-    }
-
-    
 
     ul{
         position: absolute;
@@ -207,4 +202,20 @@ export const Nav = styled.nav`
             }
         }
     }
+`;
+
+export const Icons = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 1.2rem;
+`;
+
+export const Line = styled(motion.span)`
+    width: 2px;
+    height: 8rem;
+    background-color: var(--picto-color);
 `;

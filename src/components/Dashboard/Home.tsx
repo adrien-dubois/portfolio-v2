@@ -11,7 +11,7 @@ const initialState = {
   name: "",
   url: "",
   description: "",
-  picture: ""
+  picture: {}
 }
 
 const Home = () => {
@@ -51,6 +51,8 @@ const Home = () => {
       ...formData,
       picture: data
     })
+
+    console.log(formData)
   }
 
   const logout = () => {

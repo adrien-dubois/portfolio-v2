@@ -1,9 +1,26 @@
 import styled from 'styled-components';
 
+
 export const ContactForm = styled.div`
-    width: 100%;
+    min-width: 100%;
     margin-top: 20px;
-  
+    position: relative;
+
+    .form-tags{
+        position: absolute;
+        left: -10px;
+        right: 0;
+        
+        &.top{
+            top: -5px;
+
+        }
+
+        &.bottom{
+            bottom: 0;
+        }
+    }
+
     form{
 
         .error::placeholder{
@@ -20,6 +37,7 @@ export const ContactForm = styled.div`
                 list-style: none;
                 margin-bottom: 10px;
                 overflow: hidden;
+                display: block;
                 position: relative;
                 opacity: 0;
                 animation: fadeInUp 2s 2s;
@@ -87,10 +105,6 @@ export const ContactForm = styled.div`
                     border-radius: 4px;
                     box-shadow: 0 0 2px rgba(51, 51, 51, 0.3);
                 }
-
-                input[type="text"], textarea{
-                    width: 100%;
-                }
                 
                 .field{
                     border: 0;
@@ -130,10 +144,10 @@ export const ContactForm = styled.div`
 export const InfoMap = styled.div`
     position: absolute;
     background-color: rgba(0, 0, 0, 0.85);
-    top: 80px;
-    right: 40%;
+    top: 50px;
+    right: 30%;
     z-index: 999999;
-    width: 280px;
+    width: 267px;
     padding: 20px;
     color: #FFF;
     font-family: var(--ubuntu-font);

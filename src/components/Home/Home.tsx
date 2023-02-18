@@ -19,7 +19,6 @@ const Home = () => {
   }, [])
 
   return (
-    <>
       <Div>
           <div className="text-zone">
               <h1>
@@ -49,7 +48,6 @@ const Home = () => {
           <Logo/>
 
       </Div>
-    </>
   )
 }
 
